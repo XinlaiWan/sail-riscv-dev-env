@@ -1,5 +1,5 @@
-SEW ?= 64
-LMUL ?= 2
+SEW ?= 32
+LMUL ?= 1
 TEST_CONFIG = generateall_vlen512_vsew$(SEW)_lmul$(LMUL)
 
 PROJ_ROOT := /home/brighterw/sail-riscv-dev-env
