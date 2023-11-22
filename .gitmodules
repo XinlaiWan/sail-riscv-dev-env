@@ -1,0 +1,6 @@
+[submodule "rvv-atg"]
+	path = rvv-atg
+	url = https://github.com/hushenwei2000/rvv-atg.git
+[submodule "sail-riscv"]
+	path = sail-riscv
+	url = https://github.com/XinlaiWan/sail-riscv.git

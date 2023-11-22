@@ -1,0 +1,52543 @@
+#define TEST_VCOMPRESS_OP_rd_24( testnum, inst, result_addr, src_addr, rd_addr, vm_addr ) \
+        TEST_CASE_LOOP( testnum, v24, result_addr, \
+            VSET_VSEW_4AVL \
+            la  x1, src_addr; \
+            la  x2, rd_addr; \
+            la  x3, vm_addr; \
+            vle64.v v8, (x3); \
+            vmseq.vi v0, v8, 1; \
+            vle64.v v8, (x1); \
+            vle64.v v24, (x2); \
+            inst v24, v8, v0; \
+        )
+#define TEST_VCOMPRESS_OP_rs1_24( testnum, inst, result_addr, src_addr, rd_addr, vm_addr ) \
+        TEST_CASE_LOOP( testnum, v16, result_addr, \
+            VSET_VSEW_4AVL \
+            la  x1, src_addr; \
+            la  x2, rd_addr; \
+            la  x3, vm_addr; \
+            vle64.v v8, (x3); \
+            vmseq.vi v24, v8, 1; \
+            vle64.v v8, (x1); \
+            vle64.v v16, (x2); \
+            inst v16, v8, v24; \
+        )
+#define TEST_VCOMPRESS_OP_rs1_25( testnum, inst, result_addr, src_addr, rd_addr, vm_addr ) \
+        TEST_CASE_LOOP( testnum, v16, result_addr, \
+            VSET_VSEW_4AVL \
+            la  x1, src_addr; \
+            la  x2, rd_addr; \
+            la  x3, vm_addr; \
+            vle64.v v8, (x3); \
+            vmseq.vi v25, v8, 1; \
+            vle64.v v8, (x1); \
+            vle64.v v16, (x2); \
+            inst v16, v8, v25; \
+        )
+#define TEST_VCOMPRESS_OP_rs1_26( testnum, inst, result_addr, src_addr, rd_addr, vm_addr ) \
+        TEST_CASE_LOOP( testnum, v16, result_addr, \
+            VSET_VSEW_4AVL \
+            la  x1, src_addr; \
+            la  x2, rd_addr; \
+            la  x3, vm_addr; \
+            vle64.v v8, (x3); \
+            vmseq.vi v26, v8, 1; \
+            vle64.v v8, (x1); \
+            vle64.v v16, (x2); \
+            inst v16, v8, v26; \
+        )
+#define TEST_VCOMPRESS_OP_rs1_27( testnum, inst, result_addr, src_addr, rd_addr, vm_addr ) \
+        TEST_CASE_LOOP( testnum, v16, result_addr, \
+            VSET_VSEW_4AVL \
+            la  x1, src_addr; \
+            la  x2, rd_addr; \
+            la  x3, vm_addr; \
+            vle64.v v8, (x3); \
+            vmseq.vi v27, v8, 1; \
+            vle64.v v8, (x1); \
+            vle64.v v16, (x2); \
+            inst v16, v8, v27; \
+        )
+#define TEST_VCOMPRESS_OP_rs1_28( testnum, inst, result_addr, src_addr, rd_addr, vm_addr ) \
+        TEST_CASE_LOOP( testnum, v16, result_addr, \
+            VSET_VSEW_4AVL \
+            la  x1, src_addr; \
+            la  x2, rd_addr; \
+            la  x3, vm_addr; \
+            vle64.v v8, (x3); \
+            vmseq.vi v28, v8, 1; \
+            vle64.v v8, (x1); \
+            vle64.v v16, (x2); \
+            inst v16, v8, v28; \
+        )
+#define TEST_VCOMPRESS_OP_rs1_29( testnum, inst, result_addr, src_addr, rd_addr, vm_addr ) \
+        TEST_CASE_LOOP( testnum, v16, result_addr, \
+            VSET_VSEW_4AVL \
+            la  x1, src_addr; \
+            la  x2, rd_addr; \
+            la  x3, vm_addr; \
+            vle64.v v8, (x3); \
+            vmseq.vi v29, v8, 1; \
+            vle64.v v8, (x1); \
+            vle64.v v16, (x2); \
+            inst v16, v8, v29; \
+        )
+#define TEST_VCOMPRESS_OP_rs1_30( testnum, inst, result_addr, src_addr, rd_addr, vm_addr ) \
+        TEST_CASE_LOOP( testnum, v16, result_addr, \
+            VSET_VSEW_4AVL \
+            la  x1, src_addr; \
+            la  x2, rd_addr; \
+            la  x3, vm_addr; \
+            vle64.v v8, (x3); \
+            vmseq.vi v30, v8, 1; \
+            vle64.v v8, (x1); \
+            vle64.v v16, (x2); \
+            inst v16, v8, v30; \
+        )
+#define TEST_VCOMPRESS_OP_rs1_31( testnum, inst, result_addr, src_addr, rd_addr, vm_addr ) \
+        TEST_CASE_LOOP( testnum, v16, result_addr, \
+            VSET_VSEW_4AVL \
+            la  x1, src_addr; \
+            la  x2, rd_addr; \
+            la  x3, vm_addr; \
+            vle64.v v8, (x3); \
+            vmseq.vi v31, v8, 1; \
+            vle64.v v8, (x1); \
+            vle64.v v16, (x2); \
+            inst v16, v8, v31; \
+        )
+#define TEST_VCOMPRESS_OP_rs2_24( testnum, inst, result_addr, src_addr, rd_addr, vm_addr ) \
+        TEST_CASE_LOOP( testnum, v16, result_addr, \
+            VSET_VSEW_4AVL \
+            la  x1, src_addr; \
+            la  x2, rd_addr; \
+            la  x3, vm_addr; \
+            vle64.v v8, (x3); \
+            vmseq.vi v0, v8, 1; \
+            vle64.v v24, (x1); \
+            vle64.v v16, (x2); \
+            inst v16, v24, v0; \
+        )
+#----------------------------------------------------------------------------- 
+    # vcompress.S
+    #-----------------------------------------------------------------------------
+    #
+    # Test vcompress instructions.
+    #
+
+    #include "model_test.h"
+    #include "arch_test.h"
+    #include "riscv_test.h"
+    #include "test_macros_vector.h"
+
+RVTEST_ISA("RV64RV64IMAFDCVZicsr")
+    
+    .section .text.init
+    .globl rvtest_entry_point
+    rvtest_entry_point:
+    
+    #ifdef TEST_CASE_1
+    
+    RVTEST_CASE(0,"//check ISA:=regex(.*64.*);check ISA:=regex(.*V.*);def TEST_CASE_1=True;",vcompress)
+    
+    RVTEST_RV64UV
+    RVMODEL_BOOT
+    RVTEST_CODE_BEGIN
+    RVTEST_VSET
+    
+  #-------------------------------------------------------------
+  # vcompress tests
+  #-------------------------------------------------------------
+TEST_VCOMPRESS_OP( 1,  vcompress.vm,  walking_data0_ans_mask0,  walking_data0, rd_data, walking_mask_dat0 );
+TEST_VCOMPRESS_OP( 2,  vcompress.vm,  walking_data0_ans_mask1,  walking_data0, rd_data, walking_mask_dat1 );
+TEST_VCOMPRESS_OP( 3,  vcompress.vm,  walking_data0_ans_mask2,  walking_data0, rd_data, walking_mask_dat2 );
+TEST_VCOMPRESS_OP( 4,  vcompress.vm,  walking_data0_ans_mask3,  walking_data0, rd_data, walking_mask_dat3 );
+TEST_VCOMPRESS_OP( 5,  vcompress.vm,  walking_data0_ans_mask4,  walking_data0, rd_data, walking_mask_dat4 );
+TEST_VCOMPRESS_OP( 6,  vcompress.vm,  walking_data0_ans_mask5,  walking_data0, rd_data, walking_mask_dat5 );
+TEST_VCOMPRESS_OP( 7,  vcompress.vm,  walking_data0_ans_mask6,  walking_data0, rd_data, walking_mask_dat6 );
+TEST_VCOMPRESS_OP( 8,  vcompress.vm,  walking_data0_ans_mask7,  walking_data0, rd_data, walking_mask_dat7 );
+TEST_VCOMPRESS_OP( 9,  vcompress.vm,  walking_data0_ans_mask8,  walking_data0, rd_data, walking_mask_dat8 );
+TEST_VCOMPRESS_OP( 10,  vcompress.vm,  walking_data0_ans_mask9,  walking_data0, rd_data, walking_mask_dat9 );
+TEST_VCOMPRESS_OP( 11,  vcompress.vm,  walking_data0_ans_mask10,  walking_data0, rd_data, walking_mask_dat10 );
+TEST_VCOMPRESS_OP( 12,  vcompress.vm,  walking_data0_ans_mask11,  walking_data0, rd_data, walking_mask_dat11 );
+TEST_VCOMPRESS_OP( 13,  vcompress.vm,  walking_data0_ans_mask12,  walking_data0, rd_data, walking_mask_dat12 );
+TEST_VCOMPRESS_OP( 14,  vcompress.vm,  walking_data0_ans_mask13,  walking_data0, rd_data, walking_mask_dat13 );
+TEST_VCOMPRESS_OP( 15,  vcompress.vm,  walking_data0_ans_mask14,  walking_data0, rd_data, walking_mask_dat14 );
+TEST_VCOMPRESS_OP( 16,  vcompress.vm,  walking_data0_ans_mask15,  walking_data0, rd_data, walking_mask_dat15 );
+TEST_VCOMPRESS_OP( 17,  vcompress.vm,  walking_data0_ans_mask16,  walking_data0, rd_data, walking_mask_dat16 );
+TEST_VCOMPRESS_OP( 18,  vcompress.vm,  walking_data0_ans_mask17,  walking_data0, rd_data, walking_mask_dat17 );
+TEST_VCOMPRESS_OP( 19,  vcompress.vm,  walking_data0_ans_mask18,  walking_data0, rd_data, walking_mask_dat18 );
+TEST_VCOMPRESS_OP( 20,  vcompress.vm,  walking_data0_ans_mask19,  walking_data0, rd_data, walking_mask_dat19 );
+TEST_VCOMPRESS_OP( 21,  vcompress.vm,  walking_data0_ans_mask20,  walking_data0, rd_data, walking_mask_dat20 );
+TEST_VCOMPRESS_OP( 22,  vcompress.vm,  walking_data0_ans_mask21,  walking_data0, rd_data, walking_mask_dat21 );
+TEST_VCOMPRESS_OP( 23,  vcompress.vm,  walking_data0_ans_mask22,  walking_data0, rd_data, walking_mask_dat22 );
+TEST_VCOMPRESS_OP( 24,  vcompress.vm,  walking_data0_ans_mask23,  walking_data0, rd_data, walking_mask_dat23 );
+TEST_VCOMPRESS_OP( 25,  vcompress.vm,  walking_data0_ans_mask24,  walking_data0, rd_data, walking_mask_dat24 );
+TEST_VCOMPRESS_OP( 26,  vcompress.vm,  walking_data0_ans_mask25,  walking_data0, rd_data, walking_mask_dat25 );
+TEST_VCOMPRESS_OP( 27,  vcompress.vm,  walking_data0_ans_mask26,  walking_data0, rd_data, walking_mask_dat26 );
+TEST_VCOMPRESS_OP( 28,  vcompress.vm,  walking_data0_ans_mask27,  walking_data0, rd_data, walking_mask_dat27 );
+TEST_VCOMPRESS_OP( 29,  vcompress.vm,  walking_data0_ans_mask28,  walking_data0, rd_data, walking_mask_dat28 );
+TEST_VCOMPRESS_OP( 30,  vcompress.vm,  walking_data0_ans_mask29,  walking_data0, rd_data, walking_mask_dat29 );
+TEST_VCOMPRESS_OP( 31,  vcompress.vm,  walking_data0_ans_mask30,  walking_data0, rd_data, walking_mask_dat30 );
+TEST_VCOMPRESS_OP( 32,  vcompress.vm,  walking_data0_ans_mask31,  walking_data0, rd_data, walking_mask_dat31 );
+TEST_VCOMPRESS_OP( 33,  vcompress.vm,  walking_data0_ans_mask32,  walking_data0, rd_data, walking_mask_dat32 );
+TEST_VCOMPRESS_OP( 34,  vcompress.vm,  walking_data0_ans_mask33,  walking_data0, rd_data, walking_mask_dat33 );
+TEST_VCOMPRESS_OP( 35,  vcompress.vm,  walking_data0_ans_mask34,  walking_data0, rd_data, walking_mask_dat34 );
+TEST_VCOMPRESS_OP( 36,  vcompress.vm,  walking_data0_ans_mask35,  walking_data0, rd_data, walking_mask_dat35 );
+TEST_VCOMPRESS_OP( 37,  vcompress.vm,  walking_data0_ans_mask36,  walking_data0, rd_data, walking_mask_dat36 );
+TEST_VCOMPRESS_OP( 38,  vcompress.vm,  walking_data0_ans_mask37,  walking_data0, rd_data, walking_mask_dat37 );
+TEST_VCOMPRESS_OP( 39,  vcompress.vm,  walking_data0_ans_mask38,  walking_data0, rd_data, walking_mask_dat38 );
+TEST_VCOMPRESS_OP( 40,  vcompress.vm,  walking_data0_ans_mask39,  walking_data0, rd_data, walking_mask_dat39 );
+TEST_VCOMPRESS_OP( 41,  vcompress.vm,  walking_data0_ans_mask40,  walking_data0, rd_data, walking_mask_dat40 );
+TEST_VCOMPRESS_OP( 42,  vcompress.vm,  walking_data0_ans_mask41,  walking_data0, rd_data, walking_mask_dat41 );
+TEST_VCOMPRESS_OP( 43,  vcompress.vm,  walking_data0_ans_mask42,  walking_data0, rd_data, walking_mask_dat42 );
+TEST_VCOMPRESS_OP( 44,  vcompress.vm,  walking_data0_ans_mask43,  walking_data0, rd_data, walking_mask_dat43 );
+TEST_VCOMPRESS_OP( 45,  vcompress.vm,  walking_data0_ans_mask44,  walking_data0, rd_data, walking_mask_dat44 );
+TEST_VCOMPRESS_OP( 46,  vcompress.vm,  walking_data0_ans_mask45,  walking_data0, rd_data, walking_mask_dat45 );
+TEST_VCOMPRESS_OP( 47,  vcompress.vm,  walking_data0_ans_mask46,  walking_data0, rd_data, walking_mask_dat46 );
+TEST_VCOMPRESS_OP( 48,  vcompress.vm,  walking_data0_ans_mask47,  walking_data0, rd_data, walking_mask_dat47 );
+TEST_VCOMPRESS_OP( 49,  vcompress.vm,  walking_data0_ans_mask48,  walking_data0, rd_data, walking_mask_dat48 );
+TEST_VCOMPRESS_OP( 50,  vcompress.vm,  walking_data0_ans_mask49,  walking_data0, rd_data, walking_mask_dat49 );
+TEST_VCOMPRESS_OP( 51,  vcompress.vm,  walking_data0_ans_mask50,  walking_data0, rd_data, walking_mask_dat50 );
+TEST_VCOMPRESS_OP( 52,  vcompress.vm,  walking_data0_ans_mask51,  walking_data0, rd_data, walking_mask_dat51 );
+TEST_VCOMPRESS_OP( 53,  vcompress.vm,  walking_data0_ans_mask52,  walking_data0, rd_data, walking_mask_dat52 );
+TEST_VCOMPRESS_OP( 54,  vcompress.vm,  walking_data0_ans_mask53,  walking_data0, rd_data, walking_mask_dat53 );
+TEST_VCOMPRESS_OP( 55,  vcompress.vm,  walking_data0_ans_mask54,  walking_data0, rd_data, walking_mask_dat54 );
+TEST_VCOMPRESS_OP( 56,  vcompress.vm,  walking_data0_ans_mask55,  walking_data0, rd_data, walking_mask_dat55 );
+TEST_VCOMPRESS_OP( 57,  vcompress.vm,  walking_data0_ans_mask56,  walking_data0, rd_data, walking_mask_dat56 );
+TEST_VCOMPRESS_OP( 58,  vcompress.vm,  walking_data0_ans_mask57,  walking_data0, rd_data, walking_mask_dat57 );
+TEST_VCOMPRESS_OP( 59,  vcompress.vm,  walking_data0_ans_mask58,  walking_data0, rd_data, walking_mask_dat58 );
+TEST_VCOMPRESS_OP( 60,  vcompress.vm,  walking_data0_ans_mask59,  walking_data0, rd_data, walking_mask_dat59 );
+TEST_VCOMPRESS_OP( 61,  vcompress.vm,  walking_data0_ans_mask60,  walking_data0, rd_data, walking_mask_dat60 );
+TEST_VCOMPRESS_OP( 62,  vcompress.vm,  walking_data0_ans_mask61,  walking_data0, rd_data, walking_mask_dat61 );
+TEST_VCOMPRESS_OP( 63,  vcompress.vm,  walking_data0_ans_mask62,  walking_data0, rd_data, walking_mask_dat62 );
+TEST_VCOMPRESS_OP( 64,  vcompress.vm,  walking_data0_ans_mask63,  walking_data0, rd_data, walking_mask_dat63 );
+TEST_VCOMPRESS_OP( 65,  vcompress.vm,  walking_data0_ans_mask64,  walking_data0, rd_data, walking_mask_dat64 );
+TEST_VCOMPRESS_OP( 66,  vcompress.vm,  walking_data0_ans_mask65,  walking_data0, rd_data, walking_mask_dat65 );
+TEST_VCOMPRESS_OP( 67,  vcompress.vm,  walking_data0_ans_mask66,  walking_data0, rd_data, walking_mask_dat66 );
+TEST_VCOMPRESS_OP( 68,  vcompress.vm,  walking_data0_ans_mask67,  walking_data0, rd_data, walking_mask_dat67 );
+TEST_VCOMPRESS_OP( 69,  vcompress.vm,  walking_data0_ans_mask68,  walking_data0, rd_data, walking_mask_dat68 );
+TEST_VCOMPRESS_OP( 70,  vcompress.vm,  walking_data0_ans_mask69,  walking_data0, rd_data, walking_mask_dat69 );
+TEST_VCOMPRESS_OP( 71,  vcompress.vm,  walking_data0_ans_mask70,  walking_data0, rd_data, walking_mask_dat70 );
+TEST_VCOMPRESS_OP( 72,  vcompress.vm,  walking_data0_ans_mask71,  walking_data0, rd_data, walking_mask_dat71 );
+TEST_VCOMPRESS_OP( 73,  vcompress.vm,  walking_data0_ans_mask72,  walking_data0, rd_data, walking_mask_dat72 );
+TEST_VCOMPRESS_OP( 74,  vcompress.vm,  walking_data0_ans_mask73,  walking_data0, rd_data, walking_mask_dat73 );
+TEST_VCOMPRESS_OP( 75,  vcompress.vm,  walking_data0_ans_mask74,  walking_data0, rd_data, walking_mask_dat74 );
+TEST_VCOMPRESS_OP( 76,  vcompress.vm,  walking_data0_ans_mask75,  walking_data0, rd_data, walking_mask_dat75 );
+TEST_VCOMPRESS_OP( 77,  vcompress.vm,  walking_data0_ans_mask76,  walking_data0, rd_data, walking_mask_dat76 );
+TEST_VCOMPRESS_OP( 78,  vcompress.vm,  walking_data0_ans_mask77,  walking_data0, rd_data, walking_mask_dat77 );
+TEST_VCOMPRESS_OP( 79,  vcompress.vm,  walking_data0_ans_mask78,  walking_data0, rd_data, walking_mask_dat78 );
+TEST_VCOMPRESS_OP( 80,  vcompress.vm,  walking_data0_ans_mask79,  walking_data0, rd_data, walking_mask_dat79 );
+TEST_VCOMPRESS_OP( 81,  vcompress.vm,  walking_data0_ans_mask80,  walking_data0, rd_data, walking_mask_dat80 );
+TEST_VCOMPRESS_OP( 82,  vcompress.vm,  walking_data0_ans_mask81,  walking_data0, rd_data, walking_mask_dat81 );
+TEST_VCOMPRESS_OP( 83,  vcompress.vm,  walking_data0_ans_mask82,  walking_data0, rd_data, walking_mask_dat82 );
+TEST_VCOMPRESS_OP( 84,  vcompress.vm,  walking_data0_ans_mask83,  walking_data0, rd_data, walking_mask_dat83 );
+TEST_VCOMPRESS_OP( 85,  vcompress.vm,  walking_data0_ans_mask84,  walking_data0, rd_data, walking_mask_dat84 );
+TEST_VCOMPRESS_OP( 86,  vcompress.vm,  walking_data0_ans_mask85,  walking_data0, rd_data, walking_mask_dat85 );
+TEST_VCOMPRESS_OP( 87,  vcompress.vm,  walking_data0_ans_mask86,  walking_data0, rd_data, walking_mask_dat86 );
+TEST_VCOMPRESS_OP( 88,  vcompress.vm,  walking_data0_ans_mask87,  walking_data0, rd_data, walking_mask_dat87 );
+TEST_VCOMPRESS_OP( 89,  vcompress.vm,  walking_data0_ans_mask88,  walking_data0, rd_data, walking_mask_dat88 );
+TEST_VCOMPRESS_OP( 90,  vcompress.vm,  walking_data0_ans_mask89,  walking_data0, rd_data, walking_mask_dat89 );
+TEST_VCOMPRESS_OP( 91,  vcompress.vm,  walking_data0_ans_mask90,  walking_data0, rd_data, walking_mask_dat90 );
+TEST_VCOMPRESS_OP( 92,  vcompress.vm,  walking_data0_ans_mask91,  walking_data0, rd_data, walking_mask_dat91 );
+TEST_VCOMPRESS_OP( 93,  vcompress.vm,  walking_data0_ans_mask92,  walking_data0, rd_data, walking_mask_dat92 );
+TEST_VCOMPRESS_OP( 94,  vcompress.vm,  walking_data0_ans_mask93,  walking_data0, rd_data, walking_mask_dat93 );
+TEST_VCOMPRESS_OP( 95,  vcompress.vm,  walking_data0_ans_mask94,  walking_data0, rd_data, walking_mask_dat94 );
+TEST_VCOMPRESS_OP( 96,  vcompress.vm,  walking_data0_ans_mask95,  walking_data0, rd_data, walking_mask_dat95 );
+TEST_VCOMPRESS_OP( 97,  vcompress.vm,  walking_data0_ans_mask96,  walking_data0, rd_data, walking_mask_dat96 );
+TEST_VCOMPRESS_OP( 98,  vcompress.vm,  walking_data0_ans_mask97,  walking_data0, rd_data, walking_mask_dat97 );
+TEST_VCOMPRESS_OP( 99,  vcompress.vm,  walking_data0_ans_mask98,  walking_data0, rd_data, walking_mask_dat98 );
+TEST_VCOMPRESS_OP( 100,  vcompress.vm,  walking_data0_ans_mask99,  walking_data0, rd_data, walking_mask_dat99 );
+TEST_VCOMPRESS_OP( 101,  vcompress.vm,  walking_data0_ans_mask100,  walking_data0, rd_data, walking_mask_dat100 );
+TEST_VCOMPRESS_OP( 102,  vcompress.vm,  walking_data0_ans_mask101,  walking_data0, rd_data, walking_mask_dat101 );
+TEST_VCOMPRESS_OP( 103,  vcompress.vm,  walking_data0_ans_mask102,  walking_data0, rd_data, walking_mask_dat102 );
+TEST_VCOMPRESS_OP( 104,  vcompress.vm,  walking_data0_ans_mask103,  walking_data0, rd_data, walking_mask_dat103 );
+TEST_VCOMPRESS_OP( 105,  vcompress.vm,  walking_data0_ans_mask104,  walking_data0, rd_data, walking_mask_dat104 );
+TEST_VCOMPRESS_OP( 106,  vcompress.vm,  walking_data0_ans_mask105,  walking_data0, rd_data, walking_mask_dat105 );
+TEST_VCOMPRESS_OP( 107,  vcompress.vm,  walking_data0_ans_mask106,  walking_data0, rd_data, walking_mask_dat106 );
+TEST_VCOMPRESS_OP( 108,  vcompress.vm,  walking_data0_ans_mask107,  walking_data0, rd_data, walking_mask_dat107 );
+TEST_VCOMPRESS_OP( 109,  vcompress.vm,  walking_data0_ans_mask108,  walking_data0, rd_data, walking_mask_dat108 );
+TEST_VCOMPRESS_OP( 110,  vcompress.vm,  walking_data0_ans_mask109,  walking_data0, rd_data, walking_mask_dat109 );
+TEST_VCOMPRESS_OP( 111,  vcompress.vm,  walking_data0_ans_mask110,  walking_data0, rd_data, walking_mask_dat110 );
+TEST_VCOMPRESS_OP( 112,  vcompress.vm,  walking_data0_ans_mask111,  walking_data0, rd_data, walking_mask_dat111 );
+TEST_VCOMPRESS_OP( 113,  vcompress.vm,  walking_data0_ans_mask112,  walking_data0, rd_data, walking_mask_dat112 );
+TEST_VCOMPRESS_OP( 114,  vcompress.vm,  walking_data0_ans_mask113,  walking_data0, rd_data, walking_mask_dat113 );
+TEST_VCOMPRESS_OP( 115,  vcompress.vm,  walking_data0_ans_mask114,  walking_data0, rd_data, walking_mask_dat114 );
+TEST_VCOMPRESS_OP( 116,  vcompress.vm,  walking_data0_ans_mask115,  walking_data0, rd_data, walking_mask_dat115 );
+TEST_VCOMPRESS_OP( 117,  vcompress.vm,  walking_data0_ans_mask116,  walking_data0, rd_data, walking_mask_dat116 );
+TEST_VCOMPRESS_OP( 118,  vcompress.vm,  walking_data0_ans_mask117,  walking_data0, rd_data, walking_mask_dat117 );
+TEST_VCOMPRESS_OP( 119,  vcompress.vm,  walking_data0_ans_mask118,  walking_data0, rd_data, walking_mask_dat118 );
+TEST_VCOMPRESS_OP( 120,  vcompress.vm,  walking_data0_ans_mask119,  walking_data0, rd_data, walking_mask_dat119 );
+TEST_VCOMPRESS_OP( 121,  vcompress.vm,  walking_data0_ans_mask120,  walking_data0, rd_data, walking_mask_dat120 );
+TEST_VCOMPRESS_OP( 122,  vcompress.vm,  walking_data0_ans_mask121,  walking_data0, rd_data, walking_mask_dat121 );
+TEST_VCOMPRESS_OP( 123,  vcompress.vm,  walking_data0_ans_mask122,  walking_data0, rd_data, walking_mask_dat122 );
+TEST_VCOMPRESS_OP( 124,  vcompress.vm,  walking_data0_ans_mask123,  walking_data0, rd_data, walking_mask_dat123 );
+TEST_VCOMPRESS_OP( 125,  vcompress.vm,  walking_data0_ans_mask124,  walking_data0, rd_data, walking_mask_dat124 );
+TEST_VCOMPRESS_OP( 126,  vcompress.vm,  walking_data0_ans_mask125,  walking_data0, rd_data, walking_mask_dat125 );
+TEST_VCOMPRESS_OP( 127,  vcompress.vm,  walking_data0_ans_mask126,  walking_data0, rd_data, walking_mask_dat126 );
+TEST_VCOMPRESS_OP( 128,  vcompress.vm,  walking_data0_ans_mask127,  walking_data0, rd_data, walking_mask_dat127 );
+TEST_VCOMPRESS_OP( 129,  vcompress.vm,  walking_data0_ans_mask128,  walking_data0, rd_data, walking_mask_dat128 );
+TEST_VCOMPRESS_OP( 130,  vcompress.vm,  walking_data0_ans_mask129,  walking_data0, rd_data, walking_mask_dat129 );
+TEST_VCOMPRESS_OP( 131,  vcompress.vm,  walking_data1_ans_mask0,  walking_data1, rd_data, walking_mask_dat0 );
+TEST_VCOMPRESS_OP( 132,  vcompress.vm,  walking_data1_ans_mask1,  walking_data1, rd_data, walking_mask_dat1 );
+TEST_VCOMPRESS_OP( 133,  vcompress.vm,  walking_data1_ans_mask2,  walking_data1, rd_data, walking_mask_dat2 );
+TEST_VCOMPRESS_OP( 134,  vcompress.vm,  walking_data1_ans_mask3,  walking_data1, rd_data, walking_mask_dat3 );
+TEST_VCOMPRESS_OP( 135,  vcompress.vm,  walking_data1_ans_mask4,  walking_data1, rd_data, walking_mask_dat4 );
+TEST_VCOMPRESS_OP( 136,  vcompress.vm,  walking_data1_ans_mask5,  walking_data1, rd_data, walking_mask_dat5 );
+TEST_VCOMPRESS_OP( 137,  vcompress.vm,  walking_data1_ans_mask6,  walking_data1, rd_data, walking_mask_dat6 );
+TEST_VCOMPRESS_OP( 138,  vcompress.vm,  walking_data1_ans_mask7,  walking_data1, rd_data, walking_mask_dat7 );
+TEST_VCOMPRESS_OP( 139,  vcompress.vm,  walking_data1_ans_mask8,  walking_data1, rd_data, walking_mask_dat8 );
+TEST_VCOMPRESS_OP( 140,  vcompress.vm,  walking_data1_ans_mask9,  walking_data1, rd_data, walking_mask_dat9 );
+TEST_VCOMPRESS_OP( 141,  vcompress.vm,  walking_data1_ans_mask10,  walking_data1, rd_data, walking_mask_dat10 );
+TEST_VCOMPRESS_OP( 142,  vcompress.vm,  walking_data1_ans_mask11,  walking_data1, rd_data, walking_mask_dat11 );
+TEST_VCOMPRESS_OP( 143,  vcompress.vm,  walking_data1_ans_mask12,  walking_data1, rd_data, walking_mask_dat12 );
+TEST_VCOMPRESS_OP( 144,  vcompress.vm,  walking_data1_ans_mask13,  walking_data1, rd_data, walking_mask_dat13 );
+TEST_VCOMPRESS_OP( 145,  vcompress.vm,  walking_data1_ans_mask14,  walking_data1, rd_data, walking_mask_dat14 );
+TEST_VCOMPRESS_OP( 146,  vcompress.vm,  walking_data1_ans_mask15,  walking_data1, rd_data, walking_mask_dat15 );
+TEST_VCOMPRESS_OP( 147,  vcompress.vm,  walking_data1_ans_mask16,  walking_data1, rd_data, walking_mask_dat16 );
+TEST_VCOMPRESS_OP( 148,  vcompress.vm,  walking_data1_ans_mask17,  walking_data1, rd_data, walking_mask_dat17 );
+TEST_VCOMPRESS_OP( 149,  vcompress.vm,  walking_data1_ans_mask18,  walking_data1, rd_data, walking_mask_dat18 );
+TEST_VCOMPRESS_OP( 150,  vcompress.vm,  walking_data1_ans_mask19,  walking_data1, rd_data, walking_mask_dat19 );
+TEST_VCOMPRESS_OP( 151,  vcompress.vm,  walking_data1_ans_mask20,  walking_data1, rd_data, walking_mask_dat20 );
+TEST_VCOMPRESS_OP( 152,  vcompress.vm,  walking_data1_ans_mask21,  walking_data1, rd_data, walking_mask_dat21 );
+TEST_VCOMPRESS_OP( 153,  vcompress.vm,  walking_data1_ans_mask22,  walking_data1, rd_data, walking_mask_dat22 );
+TEST_VCOMPRESS_OP( 154,  vcompress.vm,  walking_data1_ans_mask23,  walking_data1, rd_data, walking_mask_dat23 );
+TEST_VCOMPRESS_OP( 155,  vcompress.vm,  walking_data1_ans_mask24,  walking_data1, rd_data, walking_mask_dat24 );
+TEST_VCOMPRESS_OP( 156,  vcompress.vm,  walking_data1_ans_mask25,  walking_data1, rd_data, walking_mask_dat25 );
+TEST_VCOMPRESS_OP( 157,  vcompress.vm,  walking_data1_ans_mask26,  walking_data1, rd_data, walking_mask_dat26 );
+TEST_VCOMPRESS_OP( 158,  vcompress.vm,  walking_data1_ans_mask27,  walking_data1, rd_data, walking_mask_dat27 );
+TEST_VCOMPRESS_OP( 159,  vcompress.vm,  walking_data1_ans_mask28,  walking_data1, rd_data, walking_mask_dat28 );
+TEST_VCOMPRESS_OP( 160,  vcompress.vm,  walking_data1_ans_mask29,  walking_data1, rd_data, walking_mask_dat29 );
+TEST_VCOMPRESS_OP( 161,  vcompress.vm,  walking_data1_ans_mask30,  walking_data1, rd_data, walking_mask_dat30 );
+TEST_VCOMPRESS_OP( 162,  vcompress.vm,  walking_data1_ans_mask31,  walking_data1, rd_data, walking_mask_dat31 );
+TEST_VCOMPRESS_OP( 163,  vcompress.vm,  walking_data1_ans_mask32,  walking_data1, rd_data, walking_mask_dat32 );
+TEST_VCOMPRESS_OP( 164,  vcompress.vm,  walking_data1_ans_mask33,  walking_data1, rd_data, walking_mask_dat33 );
+TEST_VCOMPRESS_OP( 165,  vcompress.vm,  walking_data1_ans_mask34,  walking_data1, rd_data, walking_mask_dat34 );
+TEST_VCOMPRESS_OP( 166,  vcompress.vm,  walking_data1_ans_mask35,  walking_data1, rd_data, walking_mask_dat35 );
+TEST_VCOMPRESS_OP( 167,  vcompress.vm,  walking_data1_ans_mask36,  walking_data1, rd_data, walking_mask_dat36 );
+TEST_VCOMPRESS_OP( 168,  vcompress.vm,  walking_data1_ans_mask37,  walking_data1, rd_data, walking_mask_dat37 );
+TEST_VCOMPRESS_OP( 169,  vcompress.vm,  walking_data1_ans_mask38,  walking_data1, rd_data, walking_mask_dat38 );
+TEST_VCOMPRESS_OP( 170,  vcompress.vm,  walking_data1_ans_mask39,  walking_data1, rd_data, walking_mask_dat39 );
+TEST_VCOMPRESS_OP( 171,  vcompress.vm,  walking_data1_ans_mask40,  walking_data1, rd_data, walking_mask_dat40 );
+TEST_VCOMPRESS_OP( 172,  vcompress.vm,  walking_data1_ans_mask41,  walking_data1, rd_data, walking_mask_dat41 );
+TEST_VCOMPRESS_OP( 173,  vcompress.vm,  walking_data1_ans_mask42,  walking_data1, rd_data, walking_mask_dat42 );
+TEST_VCOMPRESS_OP( 174,  vcompress.vm,  walking_data1_ans_mask43,  walking_data1, rd_data, walking_mask_dat43 );
+TEST_VCOMPRESS_OP( 175,  vcompress.vm,  walking_data1_ans_mask44,  walking_data1, rd_data, walking_mask_dat44 );
+TEST_VCOMPRESS_OP( 176,  vcompress.vm,  walking_data1_ans_mask45,  walking_data1, rd_data, walking_mask_dat45 );
+TEST_VCOMPRESS_OP( 177,  vcompress.vm,  walking_data1_ans_mask46,  walking_data1, rd_data, walking_mask_dat46 );
+TEST_VCOMPRESS_OP( 178,  vcompress.vm,  walking_data1_ans_mask47,  walking_data1, rd_data, walking_mask_dat47 );
+TEST_VCOMPRESS_OP( 179,  vcompress.vm,  walking_data1_ans_mask48,  walking_data1, rd_data, walking_mask_dat48 );
+TEST_VCOMPRESS_OP( 180,  vcompress.vm,  walking_data1_ans_mask49,  walking_data1, rd_data, walking_mask_dat49 );
+TEST_VCOMPRESS_OP( 181,  vcompress.vm,  walking_data1_ans_mask50,  walking_data1, rd_data, walking_mask_dat50 );
+TEST_VCOMPRESS_OP( 182,  vcompress.vm,  walking_data1_ans_mask51,  walking_data1, rd_data, walking_mask_dat51 );
+TEST_VCOMPRESS_OP( 183,  vcompress.vm,  walking_data1_ans_mask52,  walking_data1, rd_data, walking_mask_dat52 );
+TEST_VCOMPRESS_OP( 184,  vcompress.vm,  walking_data1_ans_mask53,  walking_data1, rd_data, walking_mask_dat53 );
+TEST_VCOMPRESS_OP( 185,  vcompress.vm,  walking_data1_ans_mask54,  walking_data1, rd_data, walking_mask_dat54 );
+TEST_VCOMPRESS_OP( 186,  vcompress.vm,  walking_data1_ans_mask55,  walking_data1, rd_data, walking_mask_dat55 );
+TEST_VCOMPRESS_OP( 187,  vcompress.vm,  walking_data1_ans_mask56,  walking_data1, rd_data, walking_mask_dat56 );
+TEST_VCOMPRESS_OP( 188,  vcompress.vm,  walking_data1_ans_mask57,  walking_data1, rd_data, walking_mask_dat57 );
+TEST_VCOMPRESS_OP( 189,  vcompress.vm,  walking_data1_ans_mask58,  walking_data1, rd_data, walking_mask_dat58 );
+TEST_VCOMPRESS_OP( 190,  vcompress.vm,  walking_data1_ans_mask59,  walking_data1, rd_data, walking_mask_dat59 );
+TEST_VCOMPRESS_OP( 191,  vcompress.vm,  walking_data1_ans_mask60,  walking_data1, rd_data, walking_mask_dat60 );
+TEST_VCOMPRESS_OP( 192,  vcompress.vm,  walking_data1_ans_mask61,  walking_data1, rd_data, walking_mask_dat61 );
+TEST_VCOMPRESS_OP( 193,  vcompress.vm,  walking_data1_ans_mask62,  walking_data1, rd_data, walking_mask_dat62 );
+TEST_VCOMPRESS_OP( 194,  vcompress.vm,  walking_data1_ans_mask63,  walking_data1, rd_data, walking_mask_dat63 );
+TEST_VCOMPRESS_OP( 195,  vcompress.vm,  walking_data1_ans_mask64,  walking_data1, rd_data, walking_mask_dat64 );
+TEST_VCOMPRESS_OP( 196,  vcompress.vm,  walking_data1_ans_mask65,  walking_data1, rd_data, walking_mask_dat65 );
+TEST_VCOMPRESS_OP( 197,  vcompress.vm,  walking_data1_ans_mask66,  walking_data1, rd_data, walking_mask_dat66 );
+TEST_VCOMPRESS_OP( 198,  vcompress.vm,  walking_data1_ans_mask67,  walking_data1, rd_data, walking_mask_dat67 );
+TEST_VCOMPRESS_OP( 199,  vcompress.vm,  walking_data1_ans_mask68,  walking_data1, rd_data, walking_mask_dat68 );
+TEST_VCOMPRESS_OP( 200,  vcompress.vm,  walking_data1_ans_mask69,  walking_data1, rd_data, walking_mask_dat69 );
+TEST_VCOMPRESS_OP( 201,  vcompress.vm,  walking_data1_ans_mask70,  walking_data1, rd_data, walking_mask_dat70 );
+TEST_VCOMPRESS_OP( 202,  vcompress.vm,  walking_data1_ans_mask71,  walking_data1, rd_data, walking_mask_dat71 );
+TEST_VCOMPRESS_OP( 203,  vcompress.vm,  walking_data1_ans_mask72,  walking_data1, rd_data, walking_mask_dat72 );
+TEST_VCOMPRESS_OP( 204,  vcompress.vm,  walking_data1_ans_mask73,  walking_data1, rd_data, walking_mask_dat73 );
+TEST_VCOMPRESS_OP( 205,  vcompress.vm,  walking_data1_ans_mask74,  walking_data1, rd_data, walking_mask_dat74 );
+TEST_VCOMPRESS_OP( 206,  vcompress.vm,  walking_data1_ans_mask75,  walking_data1, rd_data, walking_mask_dat75 );
+TEST_VCOMPRESS_OP( 207,  vcompress.vm,  walking_data1_ans_mask76,  walking_data1, rd_data, walking_mask_dat76 );
+TEST_VCOMPRESS_OP( 208,  vcompress.vm,  walking_data1_ans_mask77,  walking_data1, rd_data, walking_mask_dat77 );
+TEST_VCOMPRESS_OP( 209,  vcompress.vm,  walking_data1_ans_mask78,  walking_data1, rd_data, walking_mask_dat78 );
+TEST_VCOMPRESS_OP( 210,  vcompress.vm,  walking_data1_ans_mask79,  walking_data1, rd_data, walking_mask_dat79 );
+TEST_VCOMPRESS_OP( 211,  vcompress.vm,  walking_data1_ans_mask80,  walking_data1, rd_data, walking_mask_dat80 );
+TEST_VCOMPRESS_OP( 212,  vcompress.vm,  walking_data1_ans_mask81,  walking_data1, rd_data, walking_mask_dat81 );
+TEST_VCOMPRESS_OP( 213,  vcompress.vm,  walking_data1_ans_mask82,  walking_data1, rd_data, walking_mask_dat82 );
+TEST_VCOMPRESS_OP( 214,  vcompress.vm,  walking_data1_ans_mask83,  walking_data1, rd_data, walking_mask_dat83 );
+TEST_VCOMPRESS_OP( 215,  vcompress.vm,  walking_data1_ans_mask84,  walking_data1, rd_data, walking_mask_dat84 );
+TEST_VCOMPRESS_OP( 216,  vcompress.vm,  walking_data1_ans_mask85,  walking_data1, rd_data, walking_mask_dat85 );
+TEST_VCOMPRESS_OP( 217,  vcompress.vm,  walking_data1_ans_mask86,  walking_data1, rd_data, walking_mask_dat86 );
+TEST_VCOMPRESS_OP( 218,  vcompress.vm,  walking_data1_ans_mask87,  walking_data1, rd_data, walking_mask_dat87 );
+TEST_VCOMPRESS_OP( 219,  vcompress.vm,  walking_data1_ans_mask88,  walking_data1, rd_data, walking_mask_dat88 );
+TEST_VCOMPRESS_OP( 220,  vcompress.vm,  walking_data1_ans_mask89,  walking_data1, rd_data, walking_mask_dat89 );
+TEST_VCOMPRESS_OP( 221,  vcompress.vm,  walking_data1_ans_mask90,  walking_data1, rd_data, walking_mask_dat90 );
+TEST_VCOMPRESS_OP( 222,  vcompress.vm,  walking_data1_ans_mask91,  walking_data1, rd_data, walking_mask_dat91 );
+TEST_VCOMPRESS_OP( 223,  vcompress.vm,  walking_data1_ans_mask92,  walking_data1, rd_data, walking_mask_dat92 );
+TEST_VCOMPRESS_OP( 224,  vcompress.vm,  walking_data1_ans_mask93,  walking_data1, rd_data, walking_mask_dat93 );
+TEST_VCOMPRESS_OP( 225,  vcompress.vm,  walking_data1_ans_mask94,  walking_data1, rd_data, walking_mask_dat94 );
+TEST_VCOMPRESS_OP( 226,  vcompress.vm,  walking_data1_ans_mask95,  walking_data1, rd_data, walking_mask_dat95 );
+TEST_VCOMPRESS_OP( 227,  vcompress.vm,  walking_data1_ans_mask96,  walking_data1, rd_data, walking_mask_dat96 );
+TEST_VCOMPRESS_OP( 228,  vcompress.vm,  walking_data1_ans_mask97,  walking_data1, rd_data, walking_mask_dat97 );
+TEST_VCOMPRESS_OP( 229,  vcompress.vm,  walking_data1_ans_mask98,  walking_data1, rd_data, walking_mask_dat98 );
+TEST_VCOMPRESS_OP( 230,  vcompress.vm,  walking_data1_ans_mask99,  walking_data1, rd_data, walking_mask_dat99 );
+TEST_VCOMPRESS_OP( 231,  vcompress.vm,  walking_data1_ans_mask100,  walking_data1, rd_data, walking_mask_dat100 );
+TEST_VCOMPRESS_OP( 232,  vcompress.vm,  walking_data1_ans_mask101,  walking_data1, rd_data, walking_mask_dat101 );
+TEST_VCOMPRESS_OP( 233,  vcompress.vm,  walking_data1_ans_mask102,  walking_data1, rd_data, walking_mask_dat102 );
+TEST_VCOMPRESS_OP( 234,  vcompress.vm,  walking_data1_ans_mask103,  walking_data1, rd_data, walking_mask_dat103 );
+TEST_VCOMPRESS_OP( 235,  vcompress.vm,  walking_data1_ans_mask104,  walking_data1, rd_data, walking_mask_dat104 );
+TEST_VCOMPRESS_OP( 236,  vcompress.vm,  walking_data1_ans_mask105,  walking_data1, rd_data, walking_mask_dat105 );
+TEST_VCOMPRESS_OP( 237,  vcompress.vm,  walking_data1_ans_mask106,  walking_data1, rd_data, walking_mask_dat106 );
+TEST_VCOMPRESS_OP( 238,  vcompress.vm,  walking_data1_ans_mask107,  walking_data1, rd_data, walking_mask_dat107 );
+TEST_VCOMPRESS_OP( 239,  vcompress.vm,  walking_data1_ans_mask108,  walking_data1, rd_data, walking_mask_dat108 );
+TEST_VCOMPRESS_OP( 240,  vcompress.vm,  walking_data1_ans_mask109,  walking_data1, rd_data, walking_mask_dat109 );
+TEST_VCOMPRESS_OP( 241,  vcompress.vm,  walking_data1_ans_mask110,  walking_data1, rd_data, walking_mask_dat110 );
+TEST_VCOMPRESS_OP( 242,  vcompress.vm,  walking_data1_ans_mask111,  walking_data1, rd_data, walking_mask_dat111 );
+TEST_VCOMPRESS_OP( 243,  vcompress.vm,  walking_data1_ans_mask112,  walking_data1, rd_data, walking_mask_dat112 );
+TEST_VCOMPRESS_OP( 244,  vcompress.vm,  walking_data1_ans_mask113,  walking_data1, rd_data, walking_mask_dat113 );
+TEST_VCOMPRESS_OP( 245,  vcompress.vm,  walking_data1_ans_mask114,  walking_data1, rd_data, walking_mask_dat114 );
+TEST_VCOMPRESS_OP( 246,  vcompress.vm,  walking_data1_ans_mask115,  walking_data1, rd_data, walking_mask_dat115 );
+TEST_VCOMPRESS_OP( 247,  vcompress.vm,  walking_data1_ans_mask116,  walking_data1, rd_data, walking_mask_dat116 );
+TEST_VCOMPRESS_OP( 248,  vcompress.vm,  walking_data1_ans_mask117,  walking_data1, rd_data, walking_mask_dat117 );
+TEST_VCOMPRESS_OP( 249,  vcompress.vm,  walking_data1_ans_mask118,  walking_data1, rd_data, walking_mask_dat118 );
+TEST_VCOMPRESS_OP( 250,  vcompress.vm,  walking_data1_ans_mask119,  walking_data1, rd_data, walking_mask_dat119 );
+TEST_VCOMPRESS_OP( 251,  vcompress.vm,  walking_data1_ans_mask120,  walking_data1, rd_data, walking_mask_dat120 );
+TEST_VCOMPRESS_OP( 252,  vcompress.vm,  walking_data1_ans_mask121,  walking_data1, rd_data, walking_mask_dat121 );
+TEST_VCOMPRESS_OP( 253,  vcompress.vm,  walking_data1_ans_mask122,  walking_data1, rd_data, walking_mask_dat122 );
+TEST_VCOMPRESS_OP( 254,  vcompress.vm,  walking_data1_ans_mask123,  walking_data1, rd_data, walking_mask_dat123 );
+TEST_VCOMPRESS_OP( 255,  vcompress.vm,  walking_data1_ans_mask124,  walking_data1, rd_data, walking_mask_dat124 );
+TEST_VCOMPRESS_OP( 256,  vcompress.vm,  walking_data1_ans_mask125,  walking_data1, rd_data, walking_mask_dat125 );
+TEST_VCOMPRESS_OP( 257,  vcompress.vm,  walking_data1_ans_mask126,  walking_data1, rd_data, walking_mask_dat126 );
+TEST_VCOMPRESS_OP( 258,  vcompress.vm,  walking_data1_ans_mask127,  walking_data1, rd_data, walking_mask_dat127 );
+TEST_VCOMPRESS_OP( 259,  vcompress.vm,  walking_data1_ans_mask128,  walking_data1, rd_data, walking_mask_dat128 );
+TEST_VCOMPRESS_OP( 260,  vcompress.vm,  walking_data1_ans_mask129,  walking_data1, rd_data, walking_mask_dat129 );
+TEST_VCOMPRESS_OP( 261,  vcompress.vm,  walking_data2_ans_mask0,  walking_data2, rd_data, walking_mask_dat0 );
+TEST_VCOMPRESS_OP( 262,  vcompress.vm,  walking_data2_ans_mask1,  walking_data2, rd_data, walking_mask_dat1 );
+TEST_VCOMPRESS_OP( 263,  vcompress.vm,  walking_data2_ans_mask2,  walking_data2, rd_data, walking_mask_dat2 );
+TEST_VCOMPRESS_OP( 264,  vcompress.vm,  walking_data2_ans_mask3,  walking_data2, rd_data, walking_mask_dat3 );
+TEST_VCOMPRESS_OP( 265,  vcompress.vm,  walking_data2_ans_mask4,  walking_data2, rd_data, walking_mask_dat4 );
+TEST_VCOMPRESS_OP( 266,  vcompress.vm,  walking_data2_ans_mask5,  walking_data2, rd_data, walking_mask_dat5 );
+TEST_VCOMPRESS_OP( 267,  vcompress.vm,  walking_data2_ans_mask6,  walking_data2, rd_data, walking_mask_dat6 );
+TEST_VCOMPRESS_OP( 268,  vcompress.vm,  walking_data2_ans_mask7,  walking_data2, rd_data, walking_mask_dat7 );
+TEST_VCOMPRESS_OP( 269,  vcompress.vm,  walking_data2_ans_mask8,  walking_data2, rd_data, walking_mask_dat8 );
+TEST_VCOMPRESS_OP( 270,  vcompress.vm,  walking_data2_ans_mask9,  walking_data2, rd_data, walking_mask_dat9 );
+TEST_VCOMPRESS_OP( 271,  vcompress.vm,  walking_data2_ans_mask10,  walking_data2, rd_data, walking_mask_dat10 );
+TEST_VCOMPRESS_OP( 272,  vcompress.vm,  walking_data2_ans_mask11,  walking_data2, rd_data, walking_mask_dat11 );
+TEST_VCOMPRESS_OP( 273,  vcompress.vm,  walking_data2_ans_mask12,  walking_data2, rd_data, walking_mask_dat12 );
+TEST_VCOMPRESS_OP( 274,  vcompress.vm,  walking_data2_ans_mask13,  walking_data2, rd_data, walking_mask_dat13 );
+TEST_VCOMPRESS_OP( 275,  vcompress.vm,  walking_data2_ans_mask14,  walking_data2, rd_data, walking_mask_dat14 );
+TEST_VCOMPRESS_OP( 276,  vcompress.vm,  walking_data2_ans_mask15,  walking_data2, rd_data, walking_mask_dat15 );
+TEST_VCOMPRESS_OP( 277,  vcompress.vm,  walking_data2_ans_mask16,  walking_data2, rd_data, walking_mask_dat16 );
+TEST_VCOMPRESS_OP( 278,  vcompress.vm,  walking_data2_ans_mask17,  walking_data2, rd_data, walking_mask_dat17 );
+TEST_VCOMPRESS_OP( 279,  vcompress.vm,  walking_data2_ans_mask18,  walking_data2, rd_data, walking_mask_dat18 );
+TEST_VCOMPRESS_OP( 280,  vcompress.vm,  walking_data2_ans_mask19,  walking_data2, rd_data, walking_mask_dat19 );
+TEST_VCOMPRESS_OP( 281,  vcompress.vm,  walking_data2_ans_mask20,  walking_data2, rd_data, walking_mask_dat20 );
+TEST_VCOMPRESS_OP( 282,  vcompress.vm,  walking_data2_ans_mask21,  walking_data2, rd_data, walking_mask_dat21 );
+TEST_VCOMPRESS_OP( 283,  vcompress.vm,  walking_data2_ans_mask22,  walking_data2, rd_data, walking_mask_dat22 );
+TEST_VCOMPRESS_OP( 284,  vcompress.vm,  walking_data2_ans_mask23,  walking_data2, rd_data, walking_mask_dat23 );
+TEST_VCOMPRESS_OP( 285,  vcompress.vm,  walking_data2_ans_mask24,  walking_data2, rd_data, walking_mask_dat24 );
+TEST_VCOMPRESS_OP( 286,  vcompress.vm,  walking_data2_ans_mask25,  walking_data2, rd_data, walking_mask_dat25 );
+TEST_VCOMPRESS_OP( 287,  vcompress.vm,  walking_data2_ans_mask26,  walking_data2, rd_data, walking_mask_dat26 );
+TEST_VCOMPRESS_OP( 288,  vcompress.vm,  walking_data2_ans_mask27,  walking_data2, rd_data, walking_mask_dat27 );
+TEST_VCOMPRESS_OP( 289,  vcompress.vm,  walking_data2_ans_mask28,  walking_data2, rd_data, walking_mask_dat28 );
+TEST_VCOMPRESS_OP( 290,  vcompress.vm,  walking_data2_ans_mask29,  walking_data2, rd_data, walking_mask_dat29 );
+TEST_VCOMPRESS_OP( 291,  vcompress.vm,  walking_data2_ans_mask30,  walking_data2, rd_data, walking_mask_dat30 );
+TEST_VCOMPRESS_OP( 292,  vcompress.vm,  walking_data2_ans_mask31,  walking_data2, rd_data, walking_mask_dat31 );
+TEST_VCOMPRESS_OP( 293,  vcompress.vm,  walking_data2_ans_mask32,  walking_data2, rd_data, walking_mask_dat32 );
+TEST_VCOMPRESS_OP( 294,  vcompress.vm,  walking_data2_ans_mask33,  walking_data2, rd_data, walking_mask_dat33 );
+TEST_VCOMPRESS_OP( 295,  vcompress.vm,  walking_data2_ans_mask34,  walking_data2, rd_data, walking_mask_dat34 );
+TEST_VCOMPRESS_OP( 296,  vcompress.vm,  walking_data2_ans_mask35,  walking_data2, rd_data, walking_mask_dat35 );
+TEST_VCOMPRESS_OP( 297,  vcompress.vm,  walking_data2_ans_mask36,  walking_data2, rd_data, walking_mask_dat36 );
+TEST_VCOMPRESS_OP( 298,  vcompress.vm,  walking_data2_ans_mask37,  walking_data2, rd_data, walking_mask_dat37 );
+TEST_VCOMPRESS_OP( 299,  vcompress.vm,  walking_data2_ans_mask38,  walking_data2, rd_data, walking_mask_dat38 );
+TEST_VCOMPRESS_OP( 300,  vcompress.vm,  walking_data2_ans_mask39,  walking_data2, rd_data, walking_mask_dat39 );
+TEST_VCOMPRESS_OP( 301,  vcompress.vm,  walking_data2_ans_mask40,  walking_data2, rd_data, walking_mask_dat40 );
+TEST_VCOMPRESS_OP( 302,  vcompress.vm,  walking_data2_ans_mask41,  walking_data2, rd_data, walking_mask_dat41 );
+TEST_VCOMPRESS_OP( 303,  vcompress.vm,  walking_data2_ans_mask42,  walking_data2, rd_data, walking_mask_dat42 );
+TEST_VCOMPRESS_OP( 304,  vcompress.vm,  walking_data2_ans_mask43,  walking_data2, rd_data, walking_mask_dat43 );
+TEST_VCOMPRESS_OP( 305,  vcompress.vm,  walking_data2_ans_mask44,  walking_data2, rd_data, walking_mask_dat44 );
+TEST_VCOMPRESS_OP( 306,  vcompress.vm,  walking_data2_ans_mask45,  walking_data2, rd_data, walking_mask_dat45 );
+TEST_VCOMPRESS_OP( 307,  vcompress.vm,  walking_data2_ans_mask46,  walking_data2, rd_data, walking_mask_dat46 );
+TEST_VCOMPRESS_OP( 308,  vcompress.vm,  walking_data2_ans_mask47,  walking_data2, rd_data, walking_mask_dat47 );
+TEST_VCOMPRESS_OP( 309,  vcompress.vm,  walking_data2_ans_mask48,  walking_data2, rd_data, walking_mask_dat48 );
+TEST_VCOMPRESS_OP( 310,  vcompress.vm,  walking_data2_ans_mask49,  walking_data2, rd_data, walking_mask_dat49 );
+TEST_VCOMPRESS_OP( 311,  vcompress.vm,  walking_data2_ans_mask50,  walking_data2, rd_data, walking_mask_dat50 );
+TEST_VCOMPRESS_OP( 312,  vcompress.vm,  walking_data2_ans_mask51,  walking_data2, rd_data, walking_mask_dat51 );
+TEST_VCOMPRESS_OP( 313,  vcompress.vm,  walking_data2_ans_mask52,  walking_data2, rd_data, walking_mask_dat52 );
+TEST_VCOMPRESS_OP( 314,  vcompress.vm,  walking_data2_ans_mask53,  walking_data2, rd_data, walking_mask_dat53 );
+TEST_VCOMPRESS_OP( 315,  vcompress.vm,  walking_data2_ans_mask54,  walking_data2, rd_data, walking_mask_dat54 );
+TEST_VCOMPRESS_OP( 316,  vcompress.vm,  walking_data2_ans_mask55,  walking_data2, rd_data, walking_mask_dat55 );
+TEST_VCOMPRESS_OP( 317,  vcompress.vm,  walking_data2_ans_mask56,  walking_data2, rd_data, walking_mask_dat56 );
+TEST_VCOMPRESS_OP( 318,  vcompress.vm,  walking_data2_ans_mask57,  walking_data2, rd_data, walking_mask_dat57 );
+TEST_VCOMPRESS_OP( 319,  vcompress.vm,  walking_data2_ans_mask58,  walking_data2, rd_data, walking_mask_dat58 );
+TEST_VCOMPRESS_OP( 320,  vcompress.vm,  walking_data2_ans_mask59,  walking_data2, rd_data, walking_mask_dat59 );
+TEST_VCOMPRESS_OP( 321,  vcompress.vm,  walking_data2_ans_mask60,  walking_data2, rd_data, walking_mask_dat60 );
+TEST_VCOMPRESS_OP( 322,  vcompress.vm,  walking_data2_ans_mask61,  walking_data2, rd_data, walking_mask_dat61 );
+TEST_VCOMPRESS_OP( 323,  vcompress.vm,  walking_data2_ans_mask62,  walking_data2, rd_data, walking_mask_dat62 );
+TEST_VCOMPRESS_OP( 324,  vcompress.vm,  walking_data2_ans_mask63,  walking_data2, rd_data, walking_mask_dat63 );
+TEST_VCOMPRESS_OP( 325,  vcompress.vm,  walking_data2_ans_mask64,  walking_data2, rd_data, walking_mask_dat64 );
+TEST_VCOMPRESS_OP( 326,  vcompress.vm,  walking_data2_ans_mask65,  walking_data2, rd_data, walking_mask_dat65 );
+TEST_VCOMPRESS_OP( 327,  vcompress.vm,  walking_data2_ans_mask66,  walking_data2, rd_data, walking_mask_dat66 );
+TEST_VCOMPRESS_OP( 328,  vcompress.vm,  walking_data2_ans_mask67,  walking_data2, rd_data, walking_mask_dat67 );
+TEST_VCOMPRESS_OP( 329,  vcompress.vm,  walking_data2_ans_mask68,  walking_data2, rd_data, walking_mask_dat68 );
+TEST_VCOMPRESS_OP( 330,  vcompress.vm,  walking_data2_ans_mask69,  walking_data2, rd_data, walking_mask_dat69 );
+TEST_VCOMPRESS_OP( 331,  vcompress.vm,  walking_data2_ans_mask70,  walking_data2, rd_data, walking_mask_dat70 );
+TEST_VCOMPRESS_OP( 332,  vcompress.vm,  walking_data2_ans_mask71,  walking_data2, rd_data, walking_mask_dat71 );
+TEST_VCOMPRESS_OP( 333,  vcompress.vm,  walking_data2_ans_mask72,  walking_data2, rd_data, walking_mask_dat72 );
+TEST_VCOMPRESS_OP( 334,  vcompress.vm,  walking_data2_ans_mask73,  walking_data2, rd_data, walking_mask_dat73 );
+TEST_VCOMPRESS_OP( 335,  vcompress.vm,  walking_data2_ans_mask74,  walking_data2, rd_data, walking_mask_dat74 );
+TEST_VCOMPRESS_OP( 336,  vcompress.vm,  walking_data2_ans_mask75,  walking_data2, rd_data, walking_mask_dat75 );
+TEST_VCOMPRESS_OP( 337,  vcompress.vm,  walking_data2_ans_mask76,  walking_data2, rd_data, walking_mask_dat76 );
+TEST_VCOMPRESS_OP( 338,  vcompress.vm,  walking_data2_ans_mask77,  walking_data2, rd_data, walking_mask_dat77 );
+TEST_VCOMPRESS_OP( 339,  vcompress.vm,  walking_data2_ans_mask78,  walking_data2, rd_data, walking_mask_dat78 );
+TEST_VCOMPRESS_OP( 340,  vcompress.vm,  walking_data2_ans_mask79,  walking_data2, rd_data, walking_mask_dat79 );
+TEST_VCOMPRESS_OP( 341,  vcompress.vm,  walking_data2_ans_mask80,  walking_data2, rd_data, walking_mask_dat80 );
+TEST_VCOMPRESS_OP( 342,  vcompress.vm,  walking_data2_ans_mask81,  walking_data2, rd_data, walking_mask_dat81 );
+TEST_VCOMPRESS_OP( 343,  vcompress.vm,  walking_data2_ans_mask82,  walking_data2, rd_data, walking_mask_dat82 );
+TEST_VCOMPRESS_OP( 344,  vcompress.vm,  walking_data2_ans_mask83,  walking_data2, rd_data, walking_mask_dat83 );
+TEST_VCOMPRESS_OP( 345,  vcompress.vm,  walking_data2_ans_mask84,  walking_data2, rd_data, walking_mask_dat84 );
+TEST_VCOMPRESS_OP( 346,  vcompress.vm,  walking_data2_ans_mask85,  walking_data2, rd_data, walking_mask_dat85 );
+TEST_VCOMPRESS_OP( 347,  vcompress.vm,  walking_data2_ans_mask86,  walking_data2, rd_data, walking_mask_dat86 );
+TEST_VCOMPRESS_OP( 348,  vcompress.vm,  walking_data2_ans_mask87,  walking_data2, rd_data, walking_mask_dat87 );
+TEST_VCOMPRESS_OP( 349,  vcompress.vm,  walking_data2_ans_mask88,  walking_data2, rd_data, walking_mask_dat88 );
+TEST_VCOMPRESS_OP( 350,  vcompress.vm,  walking_data2_ans_mask89,  walking_data2, rd_data, walking_mask_dat89 );
+TEST_VCOMPRESS_OP( 351,  vcompress.vm,  walking_data2_ans_mask90,  walking_data2, rd_data, walking_mask_dat90 );
+TEST_VCOMPRESS_OP( 352,  vcompress.vm,  walking_data2_ans_mask91,  walking_data2, rd_data, walking_mask_dat91 );
+TEST_VCOMPRESS_OP( 353,  vcompress.vm,  walking_data2_ans_mask92,  walking_data2, rd_data, walking_mask_dat92 );
+TEST_VCOMPRESS_OP( 354,  vcompress.vm,  walking_data2_ans_mask93,  walking_data2, rd_data, walking_mask_dat93 );
+TEST_VCOMPRESS_OP( 355,  vcompress.vm,  walking_data2_ans_mask94,  walking_data2, rd_data, walking_mask_dat94 );
+TEST_VCOMPRESS_OP( 356,  vcompress.vm,  walking_data2_ans_mask95,  walking_data2, rd_data, walking_mask_dat95 );
+TEST_VCOMPRESS_OP( 357,  vcompress.vm,  walking_data2_ans_mask96,  walking_data2, rd_data, walking_mask_dat96 );
+TEST_VCOMPRESS_OP( 358,  vcompress.vm,  walking_data2_ans_mask97,  walking_data2, rd_data, walking_mask_dat97 );
+TEST_VCOMPRESS_OP( 359,  vcompress.vm,  walking_data2_ans_mask98,  walking_data2, rd_data, walking_mask_dat98 );
+TEST_VCOMPRESS_OP( 360,  vcompress.vm,  walking_data2_ans_mask99,  walking_data2, rd_data, walking_mask_dat99 );
+TEST_VCOMPRESS_OP( 361,  vcompress.vm,  walking_data2_ans_mask100,  walking_data2, rd_data, walking_mask_dat100 );
+TEST_VCOMPRESS_OP( 362,  vcompress.vm,  walking_data2_ans_mask101,  walking_data2, rd_data, walking_mask_dat101 );
+TEST_VCOMPRESS_OP( 363,  vcompress.vm,  walking_data2_ans_mask102,  walking_data2, rd_data, walking_mask_dat102 );
+TEST_VCOMPRESS_OP( 364,  vcompress.vm,  walking_data2_ans_mask103,  walking_data2, rd_data, walking_mask_dat103 );
+TEST_VCOMPRESS_OP( 365,  vcompress.vm,  walking_data2_ans_mask104,  walking_data2, rd_data, walking_mask_dat104 );
+TEST_VCOMPRESS_OP( 366,  vcompress.vm,  walking_data2_ans_mask105,  walking_data2, rd_data, walking_mask_dat105 );
+TEST_VCOMPRESS_OP( 367,  vcompress.vm,  walking_data2_ans_mask106,  walking_data2, rd_data, walking_mask_dat106 );
+TEST_VCOMPRESS_OP( 368,  vcompress.vm,  walking_data2_ans_mask107,  walking_data2, rd_data, walking_mask_dat107 );
+TEST_VCOMPRESS_OP( 369,  vcompress.vm,  walking_data2_ans_mask108,  walking_data2, rd_data, walking_mask_dat108 );
+TEST_VCOMPRESS_OP( 370,  vcompress.vm,  walking_data2_ans_mask109,  walking_data2, rd_data, walking_mask_dat109 );
+TEST_VCOMPRESS_OP( 371,  vcompress.vm,  walking_data2_ans_mask110,  walking_data2, rd_data, walking_mask_dat110 );
+TEST_VCOMPRESS_OP( 372,  vcompress.vm,  walking_data2_ans_mask111,  walking_data2, rd_data, walking_mask_dat111 );
+TEST_VCOMPRESS_OP( 373,  vcompress.vm,  walking_data2_ans_mask112,  walking_data2, rd_data, walking_mask_dat112 );
+TEST_VCOMPRESS_OP( 374,  vcompress.vm,  walking_data2_ans_mask113,  walking_data2, rd_data, walking_mask_dat113 );
+TEST_VCOMPRESS_OP( 375,  vcompress.vm,  walking_data2_ans_mask114,  walking_data2, rd_data, walking_mask_dat114 );
+TEST_VCOMPRESS_OP( 376,  vcompress.vm,  walking_data2_ans_mask115,  walking_data2, rd_data, walking_mask_dat115 );
+TEST_VCOMPRESS_OP( 377,  vcompress.vm,  walking_data2_ans_mask116,  walking_data2, rd_data, walking_mask_dat116 );
+TEST_VCOMPRESS_OP( 378,  vcompress.vm,  walking_data2_ans_mask117,  walking_data2, rd_data, walking_mask_dat117 );
+TEST_VCOMPRESS_OP( 379,  vcompress.vm,  walking_data2_ans_mask118,  walking_data2, rd_data, walking_mask_dat118 );
+TEST_VCOMPRESS_OP( 380,  vcompress.vm,  walking_data2_ans_mask119,  walking_data2, rd_data, walking_mask_dat119 );
+TEST_VCOMPRESS_OP( 381,  vcompress.vm,  walking_data2_ans_mask120,  walking_data2, rd_data, walking_mask_dat120 );
+TEST_VCOMPRESS_OP( 382,  vcompress.vm,  walking_data2_ans_mask121,  walking_data2, rd_data, walking_mask_dat121 );
+TEST_VCOMPRESS_OP( 383,  vcompress.vm,  walking_data2_ans_mask122,  walking_data2, rd_data, walking_mask_dat122 );
+TEST_VCOMPRESS_OP( 384,  vcompress.vm,  walking_data2_ans_mask123,  walking_data2, rd_data, walking_mask_dat123 );
+TEST_VCOMPRESS_OP( 385,  vcompress.vm,  walking_data2_ans_mask124,  walking_data2, rd_data, walking_mask_dat124 );
+TEST_VCOMPRESS_OP( 386,  vcompress.vm,  walking_data2_ans_mask125,  walking_data2, rd_data, walking_mask_dat125 );
+TEST_VCOMPRESS_OP( 387,  vcompress.vm,  walking_data2_ans_mask126,  walking_data2, rd_data, walking_mask_dat126 );
+TEST_VCOMPRESS_OP( 388,  vcompress.vm,  walking_data2_ans_mask127,  walking_data2, rd_data, walking_mask_dat127 );
+TEST_VCOMPRESS_OP( 389,  vcompress.vm,  walking_data2_ans_mask128,  walking_data2, rd_data, walking_mask_dat128 );
+TEST_VCOMPRESS_OP( 390,  vcompress.vm,  walking_data2_ans_mask129,  walking_data2, rd_data, walking_mask_dat129 );
+TEST_VCOMPRESS_OP( 391,  vcompress.vm,  walking_data3_ans_mask0,  walking_data3, rd_data, walking_mask_dat0 );
+TEST_VCOMPRESS_OP( 392,  vcompress.vm,  walking_data3_ans_mask1,  walking_data3, rd_data, walking_mask_dat1 );
+TEST_VCOMPRESS_OP( 393,  vcompress.vm,  walking_data3_ans_mask2,  walking_data3, rd_data, walking_mask_dat2 );
+TEST_VCOMPRESS_OP( 394,  vcompress.vm,  walking_data3_ans_mask3,  walking_data3, rd_data, walking_mask_dat3 );
+TEST_VCOMPRESS_OP( 395,  vcompress.vm,  walking_data3_ans_mask4,  walking_data3, rd_data, walking_mask_dat4 );
+TEST_VCOMPRESS_OP( 396,  vcompress.vm,  walking_data3_ans_mask5,  walking_data3, rd_data, walking_mask_dat5 );
+TEST_VCOMPRESS_OP( 397,  vcompress.vm,  walking_data3_ans_mask6,  walking_data3, rd_data, walking_mask_dat6 );
+TEST_VCOMPRESS_OP( 398,  vcompress.vm,  walking_data3_ans_mask7,  walking_data3, rd_data, walking_mask_dat7 );
+TEST_VCOMPRESS_OP( 399,  vcompress.vm,  walking_data3_ans_mask8,  walking_data3, rd_data, walking_mask_dat8 );
+TEST_VCOMPRESS_OP( 400,  vcompress.vm,  walking_data3_ans_mask9,  walking_data3, rd_data, walking_mask_dat9 );
+TEST_VCOMPRESS_OP( 401,  vcompress.vm,  walking_data3_ans_mask10,  walking_data3, rd_data, walking_mask_dat10 );
+TEST_VCOMPRESS_OP( 402,  vcompress.vm,  walking_data3_ans_mask11,  walking_data3, rd_data, walking_mask_dat11 );
+TEST_VCOMPRESS_OP( 403,  vcompress.vm,  walking_data3_ans_mask12,  walking_data3, rd_data, walking_mask_dat12 );
+TEST_VCOMPRESS_OP( 404,  vcompress.vm,  walking_data3_ans_mask13,  walking_data3, rd_data, walking_mask_dat13 );
+TEST_VCOMPRESS_OP( 405,  vcompress.vm,  walking_data3_ans_mask14,  walking_data3, rd_data, walking_mask_dat14 );
+TEST_VCOMPRESS_OP( 406,  vcompress.vm,  walking_data3_ans_mask15,  walking_data3, rd_data, walking_mask_dat15 );
+TEST_VCOMPRESS_OP( 407,  vcompress.vm,  walking_data3_ans_mask16,  walking_data3, rd_data, walking_mask_dat16 );
+TEST_VCOMPRESS_OP( 408,  vcompress.vm,  walking_data3_ans_mask17,  walking_data3, rd_data, walking_mask_dat17 );
+TEST_VCOMPRESS_OP( 409,  vcompress.vm,  walking_data3_ans_mask18,  walking_data3, rd_data, walking_mask_dat18 );
+TEST_VCOMPRESS_OP( 410,  vcompress.vm,  walking_data3_ans_mask19,  walking_data3, rd_data, walking_mask_dat19 );
+TEST_VCOMPRESS_OP( 411,  vcompress.vm,  walking_data3_ans_mask20,  walking_data3, rd_data, walking_mask_dat20 );
+TEST_VCOMPRESS_OP( 412,  vcompress.vm,  walking_data3_ans_mask21,  walking_data3, rd_data, walking_mask_dat21 );
+TEST_VCOMPRESS_OP( 413,  vcompress.vm,  walking_data3_ans_mask22,  walking_data3, rd_data, walking_mask_dat22 );
+TEST_VCOMPRESS_OP( 414,  vcompress.vm,  walking_data3_ans_mask23,  walking_data3, rd_data, walking_mask_dat23 );
+TEST_VCOMPRESS_OP( 415,  vcompress.vm,  walking_data3_ans_mask24,  walking_data3, rd_data, walking_mask_dat24 );
+TEST_VCOMPRESS_OP( 416,  vcompress.vm,  walking_data3_ans_mask25,  walking_data3, rd_data, walking_mask_dat25 );
+TEST_VCOMPRESS_OP( 417,  vcompress.vm,  walking_data3_ans_mask26,  walking_data3, rd_data, walking_mask_dat26 );
+TEST_VCOMPRESS_OP( 418,  vcompress.vm,  walking_data3_ans_mask27,  walking_data3, rd_data, walking_mask_dat27 );
+TEST_VCOMPRESS_OP( 419,  vcompress.vm,  walking_data3_ans_mask28,  walking_data3, rd_data, walking_mask_dat28 );
+TEST_VCOMPRESS_OP( 420,  vcompress.vm,  walking_data3_ans_mask29,  walking_data3, rd_data, walking_mask_dat29 );
+TEST_VCOMPRESS_OP( 421,  vcompress.vm,  walking_data3_ans_mask30,  walking_data3, rd_data, walking_mask_dat30 );
+TEST_VCOMPRESS_OP( 422,  vcompress.vm,  walking_data3_ans_mask31,  walking_data3, rd_data, walking_mask_dat31 );
+TEST_VCOMPRESS_OP( 423,  vcompress.vm,  walking_data3_ans_mask32,  walking_data3, rd_data, walking_mask_dat32 );
+TEST_VCOMPRESS_OP( 424,  vcompress.vm,  walking_data3_ans_mask33,  walking_data3, rd_data, walking_mask_dat33 );
+TEST_VCOMPRESS_OP( 425,  vcompress.vm,  walking_data3_ans_mask34,  walking_data3, rd_data, walking_mask_dat34 );
+TEST_VCOMPRESS_OP( 426,  vcompress.vm,  walking_data3_ans_mask35,  walking_data3, rd_data, walking_mask_dat35 );
+TEST_VCOMPRESS_OP( 427,  vcompress.vm,  walking_data3_ans_mask36,  walking_data3, rd_data, walking_mask_dat36 );
+TEST_VCOMPRESS_OP( 428,  vcompress.vm,  walking_data3_ans_mask37,  walking_data3, rd_data, walking_mask_dat37 );
+TEST_VCOMPRESS_OP( 429,  vcompress.vm,  walking_data3_ans_mask38,  walking_data3, rd_data, walking_mask_dat38 );
+TEST_VCOMPRESS_OP( 430,  vcompress.vm,  walking_data3_ans_mask39,  walking_data3, rd_data, walking_mask_dat39 );
+TEST_VCOMPRESS_OP( 431,  vcompress.vm,  walking_data3_ans_mask40,  walking_data3, rd_data, walking_mask_dat40 );
+TEST_VCOMPRESS_OP( 432,  vcompress.vm,  walking_data3_ans_mask41,  walking_data3, rd_data, walking_mask_dat41 );
+TEST_VCOMPRESS_OP( 433,  vcompress.vm,  walking_data3_ans_mask42,  walking_data3, rd_data, walking_mask_dat42 );
+TEST_VCOMPRESS_OP( 434,  vcompress.vm,  walking_data3_ans_mask43,  walking_data3, rd_data, walking_mask_dat43 );
+TEST_VCOMPRESS_OP( 435,  vcompress.vm,  walking_data3_ans_mask44,  walking_data3, rd_data, walking_mask_dat44 );
+TEST_VCOMPRESS_OP( 436,  vcompress.vm,  walking_data3_ans_mask45,  walking_data3, rd_data, walking_mask_dat45 );
+TEST_VCOMPRESS_OP( 437,  vcompress.vm,  walking_data3_ans_mask46,  walking_data3, rd_data, walking_mask_dat46 );
+TEST_VCOMPRESS_OP( 438,  vcompress.vm,  walking_data3_ans_mask47,  walking_data3, rd_data, walking_mask_dat47 );
+TEST_VCOMPRESS_OP( 439,  vcompress.vm,  walking_data3_ans_mask48,  walking_data3, rd_data, walking_mask_dat48 );
+TEST_VCOMPRESS_OP( 440,  vcompress.vm,  walking_data3_ans_mask49,  walking_data3, rd_data, walking_mask_dat49 );
+TEST_VCOMPRESS_OP( 441,  vcompress.vm,  walking_data3_ans_mask50,  walking_data3, rd_data, walking_mask_dat50 );
+TEST_VCOMPRESS_OP( 442,  vcompress.vm,  walking_data3_ans_mask51,  walking_data3, rd_data, walking_mask_dat51 );
+TEST_VCOMPRESS_OP( 443,  vcompress.vm,  walking_data3_ans_mask52,  walking_data3, rd_data, walking_mask_dat52 );
+TEST_VCOMPRESS_OP( 444,  vcompress.vm,  walking_data3_ans_mask53,  walking_data3, rd_data, walking_mask_dat53 );
+TEST_VCOMPRESS_OP( 445,  vcompress.vm,  walking_data3_ans_mask54,  walking_data3, rd_data, walking_mask_dat54 );
+TEST_VCOMPRESS_OP( 446,  vcompress.vm,  walking_data3_ans_mask55,  walking_data3, rd_data, walking_mask_dat55 );
+TEST_VCOMPRESS_OP( 447,  vcompress.vm,  walking_data3_ans_mask56,  walking_data3, rd_data, walking_mask_dat56 );
+TEST_VCOMPRESS_OP( 448,  vcompress.vm,  walking_data3_ans_mask57,  walking_data3, rd_data, walking_mask_dat57 );
+TEST_VCOMPRESS_OP( 449,  vcompress.vm,  walking_data3_ans_mask58,  walking_data3, rd_data, walking_mask_dat58 );
+TEST_VCOMPRESS_OP( 450,  vcompress.vm,  walking_data3_ans_mask59,  walking_data3, rd_data, walking_mask_dat59 );
+TEST_VCOMPRESS_OP( 451,  vcompress.vm,  walking_data3_ans_mask60,  walking_data3, rd_data, walking_mask_dat60 );
+TEST_VCOMPRESS_OP( 452,  vcompress.vm,  walking_data3_ans_mask61,  walking_data3, rd_data, walking_mask_dat61 );
+TEST_VCOMPRESS_OP( 453,  vcompress.vm,  walking_data3_ans_mask62,  walking_data3, rd_data, walking_mask_dat62 );
+TEST_VCOMPRESS_OP( 454,  vcompress.vm,  walking_data3_ans_mask63,  walking_data3, rd_data, walking_mask_dat63 );
+TEST_VCOMPRESS_OP( 455,  vcompress.vm,  walking_data3_ans_mask64,  walking_data3, rd_data, walking_mask_dat64 );
+TEST_VCOMPRESS_OP( 456,  vcompress.vm,  walking_data3_ans_mask65,  walking_data3, rd_data, walking_mask_dat65 );
+TEST_VCOMPRESS_OP( 457,  vcompress.vm,  walking_data3_ans_mask66,  walking_data3, rd_data, walking_mask_dat66 );
+TEST_VCOMPRESS_OP( 458,  vcompress.vm,  walking_data3_ans_mask67,  walking_data3, rd_data, walking_mask_dat67 );
+TEST_VCOMPRESS_OP( 459,  vcompress.vm,  walking_data3_ans_mask68,  walking_data3, rd_data, walking_mask_dat68 );
+TEST_VCOMPRESS_OP( 460,  vcompress.vm,  walking_data3_ans_mask69,  walking_data3, rd_data, walking_mask_dat69 );
+TEST_VCOMPRESS_OP( 461,  vcompress.vm,  walking_data3_ans_mask70,  walking_data3, rd_data, walking_mask_dat70 );
+TEST_VCOMPRESS_OP( 462,  vcompress.vm,  walking_data3_ans_mask71,  walking_data3, rd_data, walking_mask_dat71 );
+TEST_VCOMPRESS_OP( 463,  vcompress.vm,  walking_data3_ans_mask72,  walking_data3, rd_data, walking_mask_dat72 );
+TEST_VCOMPRESS_OP( 464,  vcompress.vm,  walking_data3_ans_mask73,  walking_data3, rd_data, walking_mask_dat73 );
+TEST_VCOMPRESS_OP( 465,  vcompress.vm,  walking_data3_ans_mask74,  walking_data3, rd_data, walking_mask_dat74 );
+TEST_VCOMPRESS_OP( 466,  vcompress.vm,  walking_data3_ans_mask75,  walking_data3, rd_data, walking_mask_dat75 );
+TEST_VCOMPRESS_OP( 467,  vcompress.vm,  walking_data3_ans_mask76,  walking_data3, rd_data, walking_mask_dat76 );
+TEST_VCOMPRESS_OP( 468,  vcompress.vm,  walking_data3_ans_mask77,  walking_data3, rd_data, walking_mask_dat77 );
+TEST_VCOMPRESS_OP( 469,  vcompress.vm,  walking_data3_ans_mask78,  walking_data3, rd_data, walking_mask_dat78 );
+TEST_VCOMPRESS_OP( 470,  vcompress.vm,  walking_data3_ans_mask79,  walking_data3, rd_data, walking_mask_dat79 );
+TEST_VCOMPRESS_OP( 471,  vcompress.vm,  walking_data3_ans_mask80,  walking_data3, rd_data, walking_mask_dat80 );
+TEST_VCOMPRESS_OP( 472,  vcompress.vm,  walking_data3_ans_mask81,  walking_data3, rd_data, walking_mask_dat81 );
+TEST_VCOMPRESS_OP( 473,  vcompress.vm,  walking_data3_ans_mask82,  walking_data3, rd_data, walking_mask_dat82 );
+TEST_VCOMPRESS_OP( 474,  vcompress.vm,  walking_data3_ans_mask83,  walking_data3, rd_data, walking_mask_dat83 );
+TEST_VCOMPRESS_OP( 475,  vcompress.vm,  walking_data3_ans_mask84,  walking_data3, rd_data, walking_mask_dat84 );
+TEST_VCOMPRESS_OP( 476,  vcompress.vm,  walking_data3_ans_mask85,  walking_data3, rd_data, walking_mask_dat85 );
+TEST_VCOMPRESS_OP( 477,  vcompress.vm,  walking_data3_ans_mask86,  walking_data3, rd_data, walking_mask_dat86 );
+TEST_VCOMPRESS_OP( 478,  vcompress.vm,  walking_data3_ans_mask87,  walking_data3, rd_data, walking_mask_dat87 );
+TEST_VCOMPRESS_OP( 479,  vcompress.vm,  walking_data3_ans_mask88,  walking_data3, rd_data, walking_mask_dat88 );
+TEST_VCOMPRESS_OP( 480,  vcompress.vm,  walking_data3_ans_mask89,  walking_data3, rd_data, walking_mask_dat89 );
+TEST_VCOMPRESS_OP( 481,  vcompress.vm,  walking_data3_ans_mask90,  walking_data3, rd_data, walking_mask_dat90 );
+TEST_VCOMPRESS_OP( 482,  vcompress.vm,  walking_data3_ans_mask91,  walking_data3, rd_data, walking_mask_dat91 );
+TEST_VCOMPRESS_OP( 483,  vcompress.vm,  walking_data3_ans_mask92,  walking_data3, rd_data, walking_mask_dat92 );
+TEST_VCOMPRESS_OP( 484,  vcompress.vm,  walking_data3_ans_mask93,  walking_data3, rd_data, walking_mask_dat93 );
+TEST_VCOMPRESS_OP( 485,  vcompress.vm,  walking_data3_ans_mask94,  walking_data3, rd_data, walking_mask_dat94 );
+TEST_VCOMPRESS_OP( 486,  vcompress.vm,  walking_data3_ans_mask95,  walking_data3, rd_data, walking_mask_dat95 );
+TEST_VCOMPRESS_OP( 487,  vcompress.vm,  walking_data3_ans_mask96,  walking_data3, rd_data, walking_mask_dat96 );
+TEST_VCOMPRESS_OP( 488,  vcompress.vm,  walking_data3_ans_mask97,  walking_data3, rd_data, walking_mask_dat97 );
+TEST_VCOMPRESS_OP( 489,  vcompress.vm,  walking_data3_ans_mask98,  walking_data3, rd_data, walking_mask_dat98 );
+TEST_VCOMPRESS_OP( 490,  vcompress.vm,  walking_data3_ans_mask99,  walking_data3, rd_data, walking_mask_dat99 );
+TEST_VCOMPRESS_OP( 491,  vcompress.vm,  walking_data3_ans_mask100,  walking_data3, rd_data, walking_mask_dat100 );
+TEST_VCOMPRESS_OP( 492,  vcompress.vm,  walking_data3_ans_mask101,  walking_data3, rd_data, walking_mask_dat101 );
+TEST_VCOMPRESS_OP( 493,  vcompress.vm,  walking_data3_ans_mask102,  walking_data3, rd_data, walking_mask_dat102 );
+TEST_VCOMPRESS_OP( 494,  vcompress.vm,  walking_data3_ans_mask103,  walking_data3, rd_data, walking_mask_dat103 );
+TEST_VCOMPRESS_OP( 495,  vcompress.vm,  walking_data3_ans_mask104,  walking_data3, rd_data, walking_mask_dat104 );
+TEST_VCOMPRESS_OP( 496,  vcompress.vm,  walking_data3_ans_mask105,  walking_data3, rd_data, walking_mask_dat105 );
+TEST_VCOMPRESS_OP( 497,  vcompress.vm,  walking_data3_ans_mask106,  walking_data3, rd_data, walking_mask_dat106 );
+TEST_VCOMPRESS_OP( 498,  vcompress.vm,  walking_data3_ans_mask107,  walking_data3, rd_data, walking_mask_dat107 );
+TEST_VCOMPRESS_OP( 499,  vcompress.vm,  walking_data3_ans_mask108,  walking_data3, rd_data, walking_mask_dat108 );
+TEST_VCOMPRESS_OP( 500,  vcompress.vm,  walking_data3_ans_mask109,  walking_data3, rd_data, walking_mask_dat109 );
+TEST_VCOMPRESS_OP( 501,  vcompress.vm,  walking_data3_ans_mask110,  walking_data3, rd_data, walking_mask_dat110 );
+TEST_VCOMPRESS_OP( 502,  vcompress.vm,  walking_data3_ans_mask111,  walking_data3, rd_data, walking_mask_dat111 );
+TEST_VCOMPRESS_OP( 503,  vcompress.vm,  walking_data3_ans_mask112,  walking_data3, rd_data, walking_mask_dat112 );
+TEST_VCOMPRESS_OP( 504,  vcompress.vm,  walking_data3_ans_mask113,  walking_data3, rd_data, walking_mask_dat113 );
+TEST_VCOMPRESS_OP( 505,  vcompress.vm,  walking_data3_ans_mask114,  walking_data3, rd_data, walking_mask_dat114 );
+TEST_VCOMPRESS_OP( 506,  vcompress.vm,  walking_data3_ans_mask115,  walking_data3, rd_data, walking_mask_dat115 );
+TEST_VCOMPRESS_OP( 507,  vcompress.vm,  walking_data3_ans_mask116,  walking_data3, rd_data, walking_mask_dat116 );
+TEST_VCOMPRESS_OP( 508,  vcompress.vm,  walking_data3_ans_mask117,  walking_data3, rd_data, walking_mask_dat117 );
+TEST_VCOMPRESS_OP( 509,  vcompress.vm,  walking_data3_ans_mask118,  walking_data3, rd_data, walking_mask_dat118 );
+TEST_VCOMPRESS_OP( 510,  vcompress.vm,  walking_data3_ans_mask119,  walking_data3, rd_data, walking_mask_dat119 );
+TEST_VCOMPRESS_OP( 511,  vcompress.vm,  walking_data3_ans_mask120,  walking_data3, rd_data, walking_mask_dat120 );
+TEST_VCOMPRESS_OP( 512,  vcompress.vm,  walking_data3_ans_mask121,  walking_data3, rd_data, walking_mask_dat121 );
+TEST_VCOMPRESS_OP( 513,  vcompress.vm,  walking_data3_ans_mask122,  walking_data3, rd_data, walking_mask_dat122 );
+TEST_VCOMPRESS_OP( 514,  vcompress.vm,  walking_data3_ans_mask123,  walking_data3, rd_data, walking_mask_dat123 );
+TEST_VCOMPRESS_OP( 515,  vcompress.vm,  walking_data3_ans_mask124,  walking_data3, rd_data, walking_mask_dat124 );
+TEST_VCOMPRESS_OP( 516,  vcompress.vm,  walking_data3_ans_mask125,  walking_data3, rd_data, walking_mask_dat125 );
+TEST_VCOMPRESS_OP( 517,  vcompress.vm,  walking_data3_ans_mask126,  walking_data3, rd_data, walking_mask_dat126 );
+TEST_VCOMPRESS_OP( 518,  vcompress.vm,  walking_data3_ans_mask127,  walking_data3, rd_data, walking_mask_dat127 );
+TEST_VCOMPRESS_OP( 519,  vcompress.vm,  walking_data3_ans_mask128,  walking_data3, rd_data, walking_mask_dat128 );
+TEST_VCOMPRESS_OP( 520,  vcompress.vm,  walking_data3_ans_mask129,  walking_data3, rd_data, walking_mask_dat129 );
+  #-------------------------------------------------------------
+  # vcompress Tests (different register)
+  #-------------------------------------------------------------
+  RVTEST_SIGBASE( x12,signature_x12_1)
+TEST_VCOMPRESS_OP_rd_24( 521,  vcompress.vm,  walking_data0_ans_mask129,  walking_data0, rd_data, walking_mask_dat129 );
+TEST_VCOMPRESS_OP_rs1_24( 522,  vcompress.vm,  walking_data0_ans_mask129,  walking_data0, rd_data, walking_mask_dat129 );
+TEST_VCOMPRESS_OP_rs1_25( 523,  vcompress.vm,  walking_data1_ans_mask129,  walking_data1, rd_data, walking_mask_dat129 );
+TEST_VCOMPRESS_OP_rs1_26( 524,  vcompress.vm,  walking_data2_ans_mask129,  walking_data2, rd_data, walking_mask_dat129 );
+TEST_VCOMPRESS_OP_rs1_27( 525,  vcompress.vm,  walking_data3_ans_mask129,  walking_data3, rd_data, walking_mask_dat129 );
+TEST_VCOMPRESS_OP_rs1_28( 526,  vcompress.vm,  walking_data0_ans_mask129,  walking_data0, rd_data, walking_mask_dat129 );
+TEST_VCOMPRESS_OP_rs1_29( 527,  vcompress.vm,  walking_data1_ans_mask129,  walking_data1, rd_data, walking_mask_dat129 );
+TEST_VCOMPRESS_OP_rs1_30( 528,  vcompress.vm,  walking_data2_ans_mask129,  walking_data2, rd_data, walking_mask_dat129 );
+TEST_VCOMPRESS_OP_rs1_31( 529,  vcompress.vm,  walking_data3_ans_mask129,  walking_data3, rd_data, walking_mask_dat129 );
+TEST_VCOMPRESS_OP_rs2_24( 530,  vcompress.vm,  walking_data0_ans_mask129,  walking_data0, rd_data, walking_mask_dat129 );
+  RVTEST_SIGBASE( x20,signature_x20_2)
+        
+    TEST_VV_OP_NOUSE(32766, vadd.vv, 2, 1, 1)
+    TEST_PASSFAIL
+    #endif
+    
+    RVTEST_CODE_END
+    RVMODEL_HALT
+    
+    .data
+    RVTEST_DATA_BEGIN
+    
+    TEST_DATA
+    
+walking_mask_dat0:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat1:
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat2:
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat3:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat4:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat5:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat6:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat7:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat8:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat9:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat10:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat11:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat12:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat13:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat14:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat15:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat16:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat17:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat18:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat19:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat20:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat21:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat22:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat23:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat24:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat25:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat26:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat27:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat28:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat29:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat30:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat31:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat32:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat33:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat34:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat35:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat36:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat37:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat38:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat39:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat40:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat41:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat42:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat43:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat44:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat45:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat46:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat47:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat48:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat49:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat50:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat51:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat52:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat53:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat54:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat55:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat56:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat57:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat58:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat59:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat60:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat61:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat62:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+	.dword 0x0
+
+walking_mask_dat63:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+	.dword 0x0
+
+walking_mask_dat64:
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x0
+	.dword 0x1
+
+walking_mask_dat65:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat66:
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat67:
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat68:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat69:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat70:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat71:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat72:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat73:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat74:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat75:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat76:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat77:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat78:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat79:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat80:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat81:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat82:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat83:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat84:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat85:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat86:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat87:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat88:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat89:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat90:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat91:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat92:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat93:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat94:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat95:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat96:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat97:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat98:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat99:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat100:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat101:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat102:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat103:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat104:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat105:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat106:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat107:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat108:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat109:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat110:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat111:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat112:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat113:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat114:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat115:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat116:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat117:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat118:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat119:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat120:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat121:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat122:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat123:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat124:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat125:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat126:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat127:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+	.dword 0x1
+
+walking_mask_dat128:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+	.dword 0x1
+
+walking_mask_dat129:
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x1
+	.dword 0x0
+
+walking_ones_dat0:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat1:
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat2:
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat3:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat4:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat5:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat6:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat7:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat8:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat9:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat10:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat11:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat12:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat13:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat14:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat15:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat16:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat17:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat18:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat19:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat20:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat21:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat22:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat23:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat24:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat25:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat26:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat27:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat28:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat29:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat30:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat31:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat32:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat33:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat34:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat35:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat36:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat37:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat38:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat39:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat40:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat41:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat42:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat43:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat44:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat45:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat46:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat47:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat48:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat49:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat50:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat51:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat52:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat53:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat54:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat55:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat56:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat57:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat58:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat59:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat60:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat61:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat62:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+	.dword	0x0
+
+walking_ones_dat63:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+	.dword	0x0
+
+walking_ones_dat64:
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x0
+	.dword	0x1
+
+walking_zeros_dat0:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat1:
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat2:
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat3:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat4:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat5:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat6:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat7:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat8:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat9:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat10:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat11:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat12:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat13:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat14:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat15:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat16:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat17:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat18:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat19:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat20:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat21:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat22:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat23:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat24:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat25:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat26:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat27:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat28:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat29:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat30:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat31:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat32:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat33:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat34:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat35:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat36:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat37:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat38:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat39:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat40:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat41:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat42:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat43:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat44:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat45:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat46:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat47:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat48:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat49:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat50:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat51:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat52:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat53:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat54:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat55:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat56:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat57:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat58:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat59:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat60:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat61:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat62:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+	.dword	0x1
+
+walking_zeros_dat63:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+	.dword	0x1
+
+walking_zeros_dat64:
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x1
+	.dword	0x0
+
+rd_data:
+.dword	3
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+
+walking_data0_ans_mask0:
+.dword	3
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask1:
+.dword	-9223372036854775808
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask2:
+.dword	-6148914691236517206
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask3:
+.dword	-6148914691236517205
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask4:
+.dword	-4611686018427387905
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask5:
+.dword	-2305843009213693953
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask6:
+.dword	-1152921504606846977
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask7:
+.dword	-576460752303423489
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask8:
+.dword	-288230376151711745
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask9:
+.dword	-144115188075855873
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask10:
+.dword	-72057594037927937
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask11:
+.dword	-36028797018963969
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask12:
+.dword	-18014398509481985
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask13:
+.dword	-9007199254740993
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask14:
+.dword	-4503599627370497
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask15:
+.dword	-2251799813685249
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask16:
+.dword	-1125899906842625
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask17:
+.dword	-562949953421313
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask18:
+.dword	-281474976710657
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask19:
+.dword	-140737488355329
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask20:
+.dword	-70368744177665
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask21:
+.dword	-35184372088833
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask22:
+.dword	-17592186044417
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask23:
+.dword	-8796093022209
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask24:
+.dword	-4398046511105
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask25:
+.dword	-2199023255553
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask26:
+.dword	-1099511627777
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask27:
+.dword	-549755813889
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask28:
+.dword	-274877906945
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask29:
+.dword	-137438953473
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask30:
+.dword	-68719476737
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask31:
+.dword	-34359738369
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask32:
+.dword	-17179869185
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask33:
+.dword	-8589934593
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask34:
+.dword	-4294967297
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask35:
+.dword	-3037000499
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask36:
+.dword	-3037000498
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask37:
+.dword	-2147483649
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask38:
+.dword	-1073741825
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask39:
+.dword	-536870913
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask40:
+.dword	-268435457
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask41:
+.dword	-134217729
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask42:
+.dword	-67108865
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask43:
+.dword	-33554433
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask44:
+.dword	-16777217
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask45:
+.dword	-8388609
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask46:
+.dword	-4194305
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask47:
+.dword	-2097153
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask48:
+.dword	-1048577
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask49:
+.dword	-524289
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask50:
+.dword	-262145
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask51:
+.dword	-131073
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask52:
+.dword	-65537
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask53:
+.dword	-32769
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask54:
+.dword	-16385
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask55:
+.dword	-8193
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask56:
+.dword	-4097
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask57:
+.dword	-2049
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask58:
+.dword	-1025
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask59:
+.dword	-513
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask60:
+.dword	-257
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask61:
+.dword	-129
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask62:
+.dword	-65
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask63:
+.dword	-33
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask64:
+.dword	-17
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data0_ans_mask65:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+
+walking_data0_ans_mask66:
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask67:
+.dword	-9223372036854775808
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask68:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask69:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask70:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask71:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask72:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask73:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask74:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask75:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask76:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask77:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask78:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask79:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask80:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask81:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask82:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask83:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask84:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask85:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask86:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask87:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask88:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask89:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask90:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask91:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask92:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask93:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask94:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask95:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask96:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask97:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask98:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask99:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask100:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask101:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask102:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask103:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask104:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask105:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask106:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask107:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask108:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask109:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask110:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask111:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask112:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask113:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask114:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask115:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask116:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask117:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask118:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask119:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask120:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask121:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask122:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask123:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask124:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask125:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask126:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-65
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask127:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-33
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask128:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-17
+.dword	111
+
+walking_data0_ans_mask129:
+.dword	-9223372036854775808
+.dword	-6148914691236517206
+.dword	-6148914691236517205
+.dword	-4611686018427387905
+.dword	-2305843009213693953
+.dword	-1152921504606846977
+.dword	-576460752303423489
+.dword	-288230376151711745
+.dword	-144115188075855873
+.dword	-72057594037927937
+.dword	-36028797018963969
+.dword	-18014398509481985
+.dword	-9007199254740993
+.dword	-4503599627370497
+.dword	-2251799813685249
+.dword	-1125899906842625
+.dword	-562949953421313
+.dword	-281474976710657
+.dword	-140737488355329
+.dword	-70368744177665
+.dword	-35184372088833
+.dword	-17592186044417
+.dword	-8796093022209
+.dword	-4398046511105
+.dword	-2199023255553
+.dword	-1099511627777
+.dword	-549755813889
+.dword	-274877906945
+.dword	-137438953473
+.dword	-68719476737
+.dword	-34359738369
+.dword	-17179869185
+.dword	-8589934593
+.dword	-4294967297
+.dword	-3037000499
+.dword	-3037000498
+.dword	-2147483649
+.dword	-1073741825
+.dword	-536870913
+.dword	-268435457
+.dword	-134217729
+.dword	-67108865
+.dword	-33554433
+.dword	-16777217
+.dword	-8388609
+.dword	-4194305
+.dword	-2097153
+.dword	-1048577
+.dword	-524289
+.dword	-262145
+.dword	-131073
+.dword	-65537
+.dword	-32769
+.dword	-16385
+.dword	-8193
+.dword	-4097
+.dword	-2049
+.dword	-1025
+.dword	-513
+.dword	-257
+.dword	-129
+.dword	-65
+.dword	-33
+.dword	111
+
+walking_data1:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+
+walking_data1_ans_mask0:
+.dword	3
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask1:
+.dword	-9
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask2:
+.dword	-5
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask3:
+.dword	-3
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask4:
+.dword	-2
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask5:
+.dword	0
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask6:
+.dword	1
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask7:
+.dword	2
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask8:
+.dword	3
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask9:
+.dword	4
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask10:
+.dword	5
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask11:
+.dword	6
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask12:
+.dword	8
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask13:
+.dword	16
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask14:
+.dword	32
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask15:
+.dword	64
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask16:
+.dword	128
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask17:
+.dword	256
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask18:
+.dword	512
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask19:
+.dword	1024
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask20:
+.dword	2048
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask21:
+.dword	4096
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask22:
+.dword	8192
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask23:
+.dword	16384
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask24:
+.dword	32768
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask25:
+.dword	65536
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask26:
+.dword	131072
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask27:
+.dword	262144
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask28:
+.dword	524288
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask29:
+.dword	1048576
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask30:
+.dword	2097152
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask31:
+.dword	4194304
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask32:
+.dword	8388608
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask33:
+.dword	16777216
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask34:
+.dword	33554432
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask35:
+.dword	67108864
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask36:
+.dword	134217728
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask37:
+.dword	268435456
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask38:
+.dword	536870912
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask39:
+.dword	1073741824
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask40:
+.dword	2147483648
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask41:
+.dword	3037000498
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask42:
+.dword	3037000499
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask43:
+.dword	3037000500
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask44:
+.dword	4294967296
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask45:
+.dword	8589934592
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask46:
+.dword	17179869184
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask47:
+.dword	34359738368
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask48:
+.dword	68719476736
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask49:
+.dword	137438953472
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask50:
+.dword	274877906944
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask51:
+.dword	549755813888
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask52:
+.dword	1099511627776
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask53:
+.dword	2199023255552
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask54:
+.dword	4398046511104
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask55:
+.dword	8796093022208
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask56:
+.dword	17592186044416
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask57:
+.dword	35184372088832
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask58:
+.dword	70368744177664
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask59:
+.dword	140737488355328
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask60:
+.dword	281474976710656
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask61:
+.dword	562949953421312
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask62:
+.dword	1125899906842624
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask63:
+.dword	2251799813685248
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask64:
+.dword	4503599627370496
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data1_ans_mask65:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+
+walking_data1_ans_mask66:
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask67:
+.dword	-9
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask68:
+.dword	-9
+.dword	-5
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask69:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask70:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask71:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask72:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask73:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask74:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask75:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask76:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask77:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask78:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask79:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask80:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask81:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask82:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask83:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask84:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask85:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask86:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask87:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask88:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask89:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask90:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask91:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask92:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask93:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask94:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask95:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask96:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask97:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask98:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask99:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask100:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask101:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask102:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask103:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask104:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask105:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask106:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask107:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask108:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask109:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask110:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask111:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask112:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask113:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask114:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask115:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask116:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask117:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask118:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask119:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask120:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask121:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask122:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask123:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask124:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask125:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask126:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask127:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	2251799813685248
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask128:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	4503599627370496
+.dword	111
+
+walking_data1_ans_mask129:
+.dword	-9
+.dword	-5
+.dword	-3
+.dword	-2
+.dword	0
+.dword	1
+.dword	2
+.dword	3
+.dword	4
+.dword	5
+.dword	6
+.dword	8
+.dword	16
+.dword	32
+.dword	64
+.dword	128
+.dword	256
+.dword	512
+.dword	1024
+.dword	2048
+.dword	4096
+.dword	8192
+.dword	16384
+.dword	32768
+.dword	65536
+.dword	131072
+.dword	262144
+.dword	524288
+.dword	1048576
+.dword	2097152
+.dword	4194304
+.dword	8388608
+.dword	16777216
+.dword	33554432
+.dword	67108864
+.dword	134217728
+.dword	268435456
+.dword	536870912
+.dword	1073741824
+.dword	2147483648
+.dword	3037000498
+.dword	3037000499
+.dword	3037000500
+.dword	4294967296
+.dword	8589934592
+.dword	17179869184
+.dword	34359738368
+.dword	68719476736
+.dword	137438953472
+.dword	274877906944
+.dword	549755813888
+.dword	1099511627776
+.dword	2199023255552
+.dword	4398046511104
+.dword	8796093022208
+.dword	17592186044416
+.dword	35184372088832
+.dword	70368744177664
+.dword	140737488355328
+.dword	281474976710656
+.dword	562949953421312
+.dword	1125899906842624
+.dword	2251799813685248
+.dword	111
+
+walking_data2:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+
+walking_data2_ans_mask0:
+.dword	3
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask1:
+.dword	9007199254740992
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask2:
+.dword	18014398509481984
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask3:
+.dword	36028797018963968
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask4:
+.dword	72057594037927936
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask5:
+.dword	144115188075855872
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask6:
+.dword	288230376151711744
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask7:
+.dword	576460752303423488
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask8:
+.dword	1152921504606846976
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask9:
+.dword	2305843009213693952
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask10:
+.dword	3689348814741910322
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask11:
+.dword	3689348814741910323
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask12:
+.dword	3689348814741910324
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask13:
+.dword	4611686018427387904
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask14:
+.dword	6148914691236517204
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask15:
+.dword	6148914691236517205
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask16:
+.dword	6148914691236517206
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask17:
+.dword	7378697629483820645
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask18:
+.dword	7378697629483820646
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask19:
+.dword	7378697629483820647
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask20:
+.dword	9223372036854775807
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask21:
+.dword	1941800512775716791
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask22:
+.dword	-2646438367829376231
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask23:
+.dword	-6309041349223943464
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask24:
+.dword	-6038996981232749791
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask25:
+.dword	-1835415571344333753
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask26:
+.dword	1435432033220553751
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask27:
+.dword	-2990192721426242586
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask28:
+.dword	-5876191043757343447
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask29:
+.dword	-8222107610382073414
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask30:
+.dword	2247573560917251576
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask31:
+.dword	-4171787983594168497
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask32:
+.dword	6435893316957783577
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask33:
+.dword	-489135320164146427
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask34:
+.dword	8256230786474392368
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask35:
+.dword	-6465673409643940042
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask36:
+.dword	8396137981104910787
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask37:
+.dword	1659048232308403821
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask38:
+.dword	-323941006337067272
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask39:
+.dword	-7910003444996520771
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask40:
+.dword	3524526137790289368
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask41:
+.dword	-1262339849592838707
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask42:
+.dword	2122612114786138690
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask43:
+.dword	-1648839613302386466
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask44:
+.dword	7663591868398786277
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask45:
+.dword	-5011872474620980959
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask46:
+.dword	139104090022372660
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask47:
+.dword	-6464244249155073139
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask48:
+.dword	-5190519178998713884
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask49:
+.dword	-8904710380596919705
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask50:
+.dword	3403296355062432834
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask51:
+.dword	-126949270411697512
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask52:
+.dword	-4016163605657560832
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask53:
+.dword	-354653173252212339
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask54:
+.dword	5405808022474804240
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask55:
+.dword	-7173727151889266097
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask56:
+.dword	2510555692827971712
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask57:
+.dword	7131149999514984462
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask58:
+.dword	-4151961808200570260
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask59:
+.dword	-2395639833492372438
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask60:
+.dword	8148278736704107067
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask61:
+.dword	-8970131334992538155
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask62:
+.dword	-4012849326502468441
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask63:
+.dword	949678263915995329
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask64:
+.dword	-3393813839023461731
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data2_ans_mask65:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+
+walking_data2_ans_mask66:
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask67:
+.dword	9007199254740992
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask68:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask69:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask70:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask71:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask72:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask73:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask74:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask75:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask76:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask77:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask78:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask79:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask80:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask81:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask82:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask83:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask84:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask85:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask86:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask87:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask88:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask89:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask90:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask91:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask92:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask93:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask94:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask95:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask96:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask97:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask98:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask99:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask100:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask101:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask102:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask103:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask104:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask105:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask106:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask107:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask108:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask109:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask110:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask111:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask112:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask113:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask114:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask115:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask116:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask117:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask118:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask119:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask120:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask121:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask122:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask123:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask124:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask125:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask126:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask127:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	949678263915995329
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask128:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	-3393813839023461731
+.dword	111
+
+walking_data2_ans_mask129:
+.dword	9007199254740992
+.dword	18014398509481984
+.dword	36028797018963968
+.dword	72057594037927936
+.dword	144115188075855872
+.dword	288230376151711744
+.dword	576460752303423488
+.dword	1152921504606846976
+.dword	2305843009213693952
+.dword	3689348814741910322
+.dword	3689348814741910323
+.dword	3689348814741910324
+.dword	4611686018427387904
+.dword	6148914691236517204
+.dword	6148914691236517205
+.dword	6148914691236517206
+.dword	7378697629483820645
+.dword	7378697629483820646
+.dword	7378697629483820647
+.dword	9223372036854775807
+.dword	1941800512775716791
+.dword	-2646438367829376231
+.dword	-6309041349223943464
+.dword	-6038996981232749791
+.dword	-1835415571344333753
+.dword	1435432033220553751
+.dword	-2990192721426242586
+.dword	-5876191043757343447
+.dword	-8222107610382073414
+.dword	2247573560917251576
+.dword	-4171787983594168497
+.dword	6435893316957783577
+.dword	-489135320164146427
+.dword	8256230786474392368
+.dword	-6465673409643940042
+.dword	8396137981104910787
+.dword	1659048232308403821
+.dword	-323941006337067272
+.dword	-7910003444996520771
+.dword	3524526137790289368
+.dword	-1262339849592838707
+.dword	2122612114786138690
+.dword	-1648839613302386466
+.dword	7663591868398786277
+.dword	-5011872474620980959
+.dword	139104090022372660
+.dword	-6464244249155073139
+.dword	-5190519178998713884
+.dword	-8904710380596919705
+.dword	3403296355062432834
+.dword	-126949270411697512
+.dword	-4016163605657560832
+.dword	-354653173252212339
+.dword	5405808022474804240
+.dword	-7173727151889266097
+.dword	2510555692827971712
+.dword	7131149999514984462
+.dword	-4151961808200570260
+.dword	-2395639833492372438
+.dword	8148278736704107067
+.dword	-8970131334992538155
+.dword	-4012849326502468441
+.dword	949678263915995329
+.dword	111
+
+walking_data3:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+
+walking_data3_ans_mask0:
+.dword	3
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask1:
+.dword	4008247680460994045
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask2:
+.dword	6106094661401986190
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask3:
+.dword	-3890376429014426328
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask4:
+.dword	-1557662721875170458
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask5:
+.dword	-5433323331826622996
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask6:
+.dword	4992144421982340988
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask7:
+.dword	-3252692793734636015
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask8:
+.dword	5931948898760181302
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask9:
+.dword	-1881623269150565861
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask10:
+.dword	-3174608139648798832
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask11:
+.dword	-876714892394110803
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask12:
+.dword	-4917806051066198472
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask13:
+.dword	-1368913870068920057
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask14:
+.dword	-4435284840131252575
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask15:
+.dword	7199959767517968878
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask16:
+.dword	1678627955924464504
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask17:
+.dword	4220752741891747082
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask18:
+.dword	8802711893923816927
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask19:
+.dword	-4836559137198349443
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask20:
+.dword	-5379288360230663385
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask21:
+.dword	-2588826749291702964
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask22:
+.dword	-9086044633969390420
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask23:
+.dword	-5060753459464010292
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask24:
+.dword	-1132418416758436431
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask25:
+.dword	-6273732524814456644
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask26:
+.dword	-8653024988447454107
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask27:
+.dword	7755390257778597013
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask28:
+.dword	5242213014988191596
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask29:
+.dword	6067911608233851536
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask30:
+.dword	5977825528410701327
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask31:
+.dword	7324914441995247703
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask32:
+.dword	1065872039900007921
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask33:
+.dword	8534441478403285434
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask34:
+.dword	2971199650728246264
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask35:
+.dword	5747560451371735679
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask36:
+.dword	2001026285844783723
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask37:
+.dword	2882628696399768333
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask38:
+.dword	-7879984377341333400
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask39:
+.dword	-5623476714212543704
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask40:
+.dword	7523557475556650599
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask41:
+.dword	-2738428826830600496
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask42:
+.dword	2255565943640630117
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask43:
+.dword	5425719897911954312
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask44:
+.dword	7941827995333415145
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask45:
+.dword	-4129925430424095465
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask46:
+.dword	-8588865986142216853
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask47:
+.dword	2090768860278828134
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask48:
+.dword	-5008974971347894813
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask49:
+.dword	3460293961643314453
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask50:
+.dword	-4168571437975381811
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask51:
+.dword	-5016458749692823798
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask52:
+.dword	-1158778529988928029
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask53:
+.dword	5909154255600579275
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask54:
+.dword	-1961861728671704750
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask55:
+.dword	-5268833450283016528
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask56:
+.dword	1019191913319345928
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask57:
+.dword	-8535957844462620874
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask58:
+.dword	2169950701808696729
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask59:
+.dword	-6838589303082771973
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask60:
+.dword	7256215548948509442
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask61:
+.dword	-3866499856558442810
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask62:
+.dword	-7784343168093584416
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask63:
+.dword	-4103754905652516615
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask64:
+.dword	-5130025950224392031
+.dword	5
+.dword	6
+.dword	7
+.dword	9
+.dword	10
+.dword	11
+.dword	12
+.dword	13
+.dword	14
+.dword	15
+.dword	17
+.dword	18
+.dword	19
+.dword	20
+.dword	21
+.dword	22
+.dword	23
+.dword	24
+.dword	25
+.dword	26
+.dword	27
+.dword	28
+.dword	29
+.dword	30
+.dword	33
+.dword	35
+.dword	36
+.dword	37
+.dword	39
+.dword	40
+.dword	41
+.dword	42
+.dword	43
+.dword	44
+.dword	45
+.dword	47
+.dword	48
+.dword	49
+.dword	50
+.dword	51
+.dword	52
+.dword	53
+.dword	54
+.dword	55
+.dword	56
+.dword	57
+.dword	58
+.dword	59
+.dword	60
+.dword	61
+.dword	67
+.dword	71
+.dword	73
+.dword	79
+.dword	83
+.dword	89
+.dword	97
+.dword	101
+.dword	103
+.dword	105
+.dword	107
+.dword	109
+.dword	111
+
+walking_data3_ans_mask65:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+
+walking_data3_ans_mask66:
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask67:
+.dword	4008247680460994045
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask68:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask69:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask70:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask71:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask72:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask73:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask74:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask75:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask76:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask77:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask78:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask79:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask80:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask81:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask82:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask83:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask84:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask85:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask86:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask87:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask88:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask89:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask90:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask91:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask92:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask93:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask94:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask95:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask96:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask97:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask98:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask99:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask100:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask101:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask102:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask103:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask104:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask105:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask106:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask107:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask108:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask109:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask110:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask111:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask112:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask113:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask114:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask115:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask116:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask117:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask118:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask119:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask120:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask121:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask122:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask123:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask124:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask125:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask126:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask127:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-4103754905652516615
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask128:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-5130025950224392031
+.dword	111
+
+walking_data3_ans_mask129:
+.dword	4008247680460994045
+.dword	6106094661401986190
+.dword	-3890376429014426328
+.dword	-1557662721875170458
+.dword	-5433323331826622996
+.dword	4992144421982340988
+.dword	-3252692793734636015
+.dword	5931948898760181302
+.dword	-1881623269150565861
+.dword	-3174608139648798832
+.dword	-876714892394110803
+.dword	-4917806051066198472
+.dword	-1368913870068920057
+.dword	-4435284840131252575
+.dword	7199959767517968878
+.dword	1678627955924464504
+.dword	4220752741891747082
+.dword	8802711893923816927
+.dword	-4836559137198349443
+.dword	-5379288360230663385
+.dword	-2588826749291702964
+.dword	-9086044633969390420
+.dword	-5060753459464010292
+.dword	-1132418416758436431
+.dword	-6273732524814456644
+.dword	-8653024988447454107
+.dword	7755390257778597013
+.dword	5242213014988191596
+.dword	6067911608233851536
+.dword	5977825528410701327
+.dword	7324914441995247703
+.dword	1065872039900007921
+.dword	8534441478403285434
+.dword	2971199650728246264
+.dword	5747560451371735679
+.dword	2001026285844783723
+.dword	2882628696399768333
+.dword	-7879984377341333400
+.dword	-5623476714212543704
+.dword	7523557475556650599
+.dword	-2738428826830600496
+.dword	2255565943640630117
+.dword	5425719897911954312
+.dword	7941827995333415145
+.dword	-4129925430424095465
+.dword	-8588865986142216853
+.dword	2090768860278828134
+.dword	-5008974971347894813
+.dword	3460293961643314453
+.dword	-4168571437975381811
+.dword	-5016458749692823798
+.dword	-1158778529988928029
+.dword	5909154255600579275
+.dword	-1961861728671704750
+.dword	-5268833450283016528
+.dword	1019191913319345928
+.dword	-8535957844462620874
+.dword	2169950701808696729
+.dword	-6838589303082771973
+.dword	7256215548948509442
+.dword	-3866499856558442810
+.dword	-7784343168093584416
+.dword	-4103754905652516615
+.dword	111
+
+signature_x12_0:
+        .fill 0,4,0xdeadbeef
+    
+    
+    signature_x12_1:
+        .fill 32,4,0xdeadbeef
+    
+    
+    signature_x20_0:
+        .fill 512,4,0xdeadbeef
+    
+    
+    signature_x20_1:
+        .fill 512,4,0xdeadbeef
+    
+    
+    signature_x20_2:
+        .fill 376,4,0xdeadbeef
+    
+    #ifdef rvtest_mtrap_routine
+    
+    mtrap_sigptr:
+        .fill 128,4,0xdeadbeef
+    
+    #endif
+    
+    #ifdef rvtest_gpr_save
+    
+    gpr_save:
+        .fill 32*(XLEN/32),4,0xdeadbeef
+    
+    #endif
+    
+    RVTEST_DATA_END
+    
