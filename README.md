@@ -11,5 +11,5 @@ To compile tests, run tests using Sail C emulator, and generate a report:
 
 Note: 
 1. Change `PROJ_ROOT` before any making operation
-2. Specify the expexted `SEW` and `LMUL` before `make` if using tests in `rvv_test_series`
+2. Specify the expected `SEW` and `LMUL` before `make` if using tests in `rvv_test_series`
 3. Carefully modify `ASM_DIR` if using tests other than `rvv_test_series`
